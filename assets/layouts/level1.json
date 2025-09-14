@@ -1,0 +1,798 @@
+{
+    "name": "Level1",
+    "layers": [
+        {
+            "name": "Background",
+            "overriden": 0,
+            "instances": [
+                {
+                    "type": "InvisibleBarrier",
+                    "properties": {
+                        "initially-visible": true,
+                        "initial-animation": "Default",
+                        "initial-frame": 0,
+                        "enable-collisions": true,
+                        "live-preview": false
+                    },
+                    "uid": 195,
+                    "instanceVariables": {},
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 7,
+                        "y": 370.216064453,
+                        "width": 12,
+                        "height": 738,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                }
+            ],
+            "sid": 195783422235157,
+            "effectTypes": [],
+            "isInitiallyVisible": true,
+            "color": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "backgroundColor": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "isTransparent": false,
+            "parallaxX": 0.5,
+            "parallaxY": 0.5,
+            "scaleRate": 1,
+            "forceOwnTexture": false,
+            "useRenderCells": false,
+            "blendMode": "normal",
+            "global": false
+        },
+        {
+            "name": "Game",
+            "overriden": 0,
+            "instances": [
+                {
+                    "type": "Player",
+                    "properties": {
+                        "initially-visible": true,
+                        "initial-animation": "idle",
+                        "initial-frame": 0,
+                        "enable-collisions": true,
+                        "live-preview": false
+                    },
+                    "uid": 1,
+                    "instanceVariables": {
+                        "health": 100
+                    },
+                    "behaviors": {
+                        "Platform": {
+                            "properties": {
+                                "max-speed": 330,
+                                "acceleration": 1500,
+                                "deceleration": 1500,
+                                "jump-strength": 650,
+                                "gravity": 1500,
+                                "max-fall-speed": 1000,
+                                "double-jump": false,
+                                "jump-sustain": 0,
+                                "default-controls": true,
+                                "enabled": true
+                            }
+                        },
+                        "ScrollTo": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        },
+                        "Pin": {
+                            "properties": {}
+                        }
+                    },
+                    "world": {
+                        "x": 128,
+                        "y": 660,
+                        "width": 32,
+                        "height": 64,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 2,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 960,
+                        "y": 592,
+                        "width": 160,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 3,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 288,
+                        "y": 576,
+                        "width": 256,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 32,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": -287,
+                        "y": 736,
+                        "width": 368,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Starfruit",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 38,
+                    "instanceVariables": {},
+                    "behaviors": {
+                        "Jumpthru": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 1040,
+                        "y": 544,
+                        "width": 32,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0.005493805
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 6,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 1184,
+                        "y": 240,
+                        "width": 32,
+                        "height": 384,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 9,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 512,
+                        "y": 384,
+                        "width": 32,
+                        "height": 224,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 10,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 288,
+                        "y": 384,
+                        "width": 32,
+                        "height": 208,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Portal",
+                    "properties": {
+                        "initially-visible": false,
+                        "initial-animation": "Default",
+                        "initial-frame": 0,
+                        "enable-collisions": false,
+                        "live-preview": false
+                    },
+                    "uid": 12,
+                    "instanceVariables": {},
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": false
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 1152,
+                        "y": 592,
+                        "width": 64,
+                        "height": 64,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 150,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 992,
+                        "y": 496,
+                        "width": 96,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 151,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 1024,
+                        "y": 336,
+                        "width": 192,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 1.570796371
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 152,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 64,
+                        "y": 736,
+                        "width": 160,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 153,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 304,
+                        "y": 800,
+                        "width": 128,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 154,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 576,
+                        "y": 768,
+                        "width": 64,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 1.570796371
+                    }
+                },
+                {
+                    "type": "Dirt",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 155,
+                    "instanceVariables": {
+                        "health": 1000
+                    },
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 704,
+                        "y": 656,
+                        "width": 64,
+                        "height": 32,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 1.570796371
+                    }
+                },
+                {
+                    "type": "MovingSolidTile",
+                    "properties": {
+                        "initially-visible": true,
+                        "origin": "top-left"
+                    },
+                    "uid": 156,
+                    "instanceVariables": {},
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        },
+                        "Sine": {
+                            "properties": {
+                                "movement": "vertical",
+                                "wave": "sine",
+                                "period": 4,
+                                "period-random": 0,
+                                "period-offset": 0,
+                                "period-offset-random": 0,
+                                "magnitude": 50,
+                                "magnitude-random": 0,
+                                "enabled": true,
+                                "live-preview": false
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 768,
+                        "y": 560,
+                        "width": 64,
+                        "height": 16,
+                        "originX": 0,
+                        "originY": 0,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "InvisibleBarrier",
+                    "properties": {
+                        "initially-visible": true,
+                        "initial-animation": "Default",
+                        "initial-frame": 0,
+                        "enable-collisions": true,
+                        "live-preview": false
+                    },
+                    "uid": 175,
+                    "instanceVariables": {},
+                    "behaviors": {
+                        "Solid": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 1296,
+                        "y": 512,
+                        "width": 12.288000107,
+                        "height": 274.432006836,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Eric",
+                    "properties": {
+                        "initially-visible": true,
+                        "initial-animation": "Default",
+                        "initial-frame": 0,
+                        "enable-collisions": true,
+                        "live-preview": false
+                    },
+                    "uid": 256,
+                    "instanceVariables": {
+                        "dialogPlayed": 0,
+                        "health": 0
+                    },
+                    "behaviors": {
+                        "Platform": {
+                            "properties": {
+                                "max-speed": 50,
+                                "acceleration": 1500,
+                                "deceleration": 1500,
+                                "jump-strength": 25,
+                                "gravity": 100,
+                                "max-fall-speed": 1000,
+                                "double-jump": false,
+                                "jump-sustain": 21,
+                                "default-controls": false,
+                                "enabled": true
+                            }
+                        },
+                        "Jumpthru": {
+                            "properties": {
+                                "enabled": true
+                            }
+                        },
+                        "LineOfSight": {
+                            "properties": {
+                                "obstacles": "solids",
+                                "range": 10000,
+                                "cone-of-view": 360,
+                                "use-collision-cells": true
+                            }
+                        },
+                        "Rotate": {
+                            "properties": {
+                                "speed": 180,
+                                "acceleration": 0,
+                                "enabled": true,
+                                "live-preview": false
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 175,
+                        "y": 678,
+                        "width": 32,
+                        "height": 64,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                },
+                {
+                    "type": "Celery",
+                    "properties": {
+                        "initially-visible": true,
+                        "initial-animation": "idle",
+                        "initial-frame": 0,
+                        "enable-collisions": true,
+                        "live-preview": false
+                    },
+                    "uid": 202,
+                    "instanceVariables": {
+                        "health": 100
+                    },
+                    "behaviors": {
+                        "Platform": {
+                            "properties": {
+                                "max-speed": 150,
+                                "acceleration": 1500,
+                                "deceleration": 1500,
+                                "jump-strength": 650,
+                                "gravity": 1500,
+                                "max-fall-speed": 1000,
+                                "double-jump": false,
+                                "jump-sustain": 0,
+                                "default-controls": false,
+                                "enabled": true
+                            }
+                        },
+                        "8Direction": {
+                            "properties": {
+                                "max-speed": 200,
+                                "acceleration": 600,
+                                "deceleration": 500,
+                                "directions": "dir-8",
+                                "set-angle": "interval-90",
+                                "default-controls": false,
+                                "enabled": true
+                            }
+                        },
+                        "LineOfSight": {
+                            "properties": {
+                                "obstacles": "solids",
+                                "range": 500,
+                                "cone-of-view": 360,
+                                "use-collision-cells": true
+                            }
+                        }
+                    },
+                    "world": {
+                        "x": 416,
+                        "y": 512,
+                        "width": 32,
+                        "height": 64,
+                        "originX": 0.5,
+                        "originY": 0.5,
+                        "color": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "angle": 0
+                    }
+                }
+            ]
+        }
+    ]
+}
