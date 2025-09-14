@@ -1,0 +1,56 @@
+{
+	"name": "Sprite3",
+	"plugin-id": "Sprite",
+	"sid": 508383080542661,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 512,
+						"height": 512,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Arty Hoefer\\Downloads\\ico-xbx-bttn-x-512.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 267,
+						"collisionPoly": {
+							"points": [
+								0.279297,
+								0.279297,
+								0.5,
+								0.1875,
+								0.720703,
+								0.279297,
+								0.8125,
+								0.5,
+								0.720703,
+								0.720703,
+								0.5,
+								0.8125,
+								0.279297,
+								0.720703,
+								0.1875,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 114343120896190,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

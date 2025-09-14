@@ -1,0 +1,15 @@
+{
+	"name": "Text24",
+	"plugin-id": "Text",
+	"sid": 885866504341771,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 329598072037162
+		}
+	],
+	"effectTypes": []
+}

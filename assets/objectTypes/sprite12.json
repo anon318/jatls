@@ -1,0 +1,60 @@
+{
+	"name": "Sprite12",
+	"plugin-id": "Sprite",
+	"sid": 780739612904900,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 186470696268248
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 252,
+						"height": 252,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\guppies logo.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 285,
+						"collisionPoly": {
+							"points": [
+								0.325397,
+								0.325397,
+								0.5,
+								0.420635,
+								0.813492,
+								0.5,
+								0.718254,
+								0.718254,
+								0.5,
+								0.59127,
+								0.281746,
+								0.718254,
+								0.206349,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 618947357047467,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "StartGame",
+	"plugin-id": "Spritefont2",
+	"sid": 913627592897350,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 473073645197972
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 270
+	}
+}

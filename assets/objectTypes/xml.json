@@ -1,0 +1,32 @@
+{
+	"name": "XML",
+	"plugin-id": "XML",
+	"sid": 566288858193507,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "highscore",
+			"type": "number",
+			"desc": "",
+			"sid": 137271056127141
+		},
+		{
+			"name": "deaths",
+			"type": "number",
+			"desc": "",
+			"sid": 107886702459531
+		},
+		{
+			"name": "starfruit",
+			"type": "number",
+			"desc": "",
+			"sid": 963185985195889
+		},
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"sid": 632068452311473
+		}
+	]
+}

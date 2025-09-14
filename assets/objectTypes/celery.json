@@ -1,0 +1,246 @@
+{
+	"name": "Celery",
+	"plugin-id": "Sprite",
+	"sid": 551463682645743,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 571790820515726
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 424577767069260
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 197584414130883
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 465083360833392
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\Celery.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 195,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.671875,
+								0.0703125,
+								0.992188,
+								0.144531,
+								0.929688,
+								0.40625,
+								0.742188,
+								0.476563,
+								0.734375,
+								0.804688,
+								0.900781,
+								0.9562500000000003,
+								0.19218799999999994,
+								0.9640630000000001,
+								0.40625,
+								0.796875,
+								0.398438,
+								0.5,
+								0.117188,
+								0.441406,
+								0,
+								0.296875
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 564236625042227,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\CeleryWalk1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 196,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.617188,
+								0.0742188,
+								1,
+								0.125,
+								0.9375,
+								0.398438,
+								0.75,
+								0.480469,
+								0.757813,
+								0.8125,
+								0.89375,
+								0.9625005000000002,
+								0.25,
+								0.960938,
+								0.40625,
+								0.796875,
+								0.40625,
+								0.511719,
+								0.015625,
+								0.296875
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\CeleryWalk2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 197,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.617188,
+								0.0742188,
+								1,
+								0.125,
+								0.9375,
+								0.398438,
+								0.75,
+								0.480469,
+								0.757813,
+								0.8125,
+								0.890625,
+								0.929688,
+								0.257813,
+								0.921875,
+								0.40625,
+								0.796875,
+								0.40625,
+								0.511719,
+								0.015625,
+								0.296875
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\CeleryWalk3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 198,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.617188,
+								0.0742188,
+								1,
+								0.125,
+								0.9375,
+								0.398438,
+								0.75,
+								0.480469,
+								0.757813,
+								0.8125,
+								0.898438,
+								0.9375,
+								0.25,
+								0.933594,
+								0.40625,
+								0.796875,
+								0.40625,
+								0.511719,
+								0.015625,
+								0.296875
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\CeleryWalk4.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 199,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.617188,
+								0.0742188,
+								1,
+								0.125,
+								0.9375,
+								0.398438,
+								0.75,
+								0.480469,
+								0.757813,
+								0.8125,
+								0.867188,
+								0.96875,
+								0.25,
+								0.957031,
+								0.40625,
+								0.796875,
+								0.40625,
+								0.511719,
+								0.015625,
+								0.296875
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 187402891325660,
+				"name": "walk",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

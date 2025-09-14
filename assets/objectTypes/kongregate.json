@@ -1,0 +1,10 @@
+{
+	"name": "Kongregate",
+	"plugin-id": "Kongregate",
+	"sid": 600777171896021,
+	"singleglobal-inst": {
+		"type": "Kongregate",
+		"properties": {},
+		"uid": 262
+	}
+}

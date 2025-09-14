@@ -1,0 +1,56 @@
+{
+	"name": "Sprite4",
+	"plugin-id": "Sprite",
+	"sid": 233992662217652,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2000,
+						"height": 2000,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Arty Hoefer\\Desktop\\Xbox_D-Pad_Left.svg.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 268,
+						"collisionPoly": {
+							"points": [
+								0.1465,
+								0.1465,
+								0.5,
+								0,
+								0.8535,
+								0.1465,
+								1,
+								0.5,
+								0.8535,
+								0.8535,
+								0.5,
+								1,
+								0.1465,
+								0.8535,
+								0,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 455156948877327,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

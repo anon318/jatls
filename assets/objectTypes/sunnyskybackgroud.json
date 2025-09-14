@@ -1,0 +1,19 @@
+{
+	"name": "SunnySkyBackgroud",
+	"plugin-id": "TiledBg",
+	"sid": 743030244597679,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 5760,
+		"height": 1080,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\dallasroberts\\Downloads\\background.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 224
+	}
+}

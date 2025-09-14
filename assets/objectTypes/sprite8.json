@@ -1,0 +1,50 @@
+{
+	"name": "Sprite8",
+	"plugin-id": "Sprite",
+	"sid": 619326462696815,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 332,
+						"height": 227,
+						"originX": 0.5,
+						"originY": 0.502203,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\1478858919_preview_arrowKeys.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 273,
+						"collisionPoly": {
+							"points": [
+								0.275281,
+								0.275281,
+								0.5,
+								0.168539,
+								0.601124,
+								0.398876,
+								0.825843,
+								0.825843,
+								0.174157,
+								0.825843
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 753305765952278,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

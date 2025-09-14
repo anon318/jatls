@@ -1,0 +1,72 @@
+{
+	"name": "BulletSprite",
+	"plugin-id": "Sprite",
+	"sid": 558647459439540,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 117871182756026
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 477415144513422
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 910257246113173
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\projectile.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 265,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.1875,
+								0.6875,
+								0.3125,
+								0.875,
+								0.5,
+								0.6875,
+								0.6875,
+								0.5,
+								0.8125,
+								0.3125,
+								0.6875,
+								0.0625,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 118016579595322,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
