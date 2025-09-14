@@ -1,0 +1,695 @@
+{
+	"name": "Level3Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "EricTutorial",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 512126509841513
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 162400543260854,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 691365085613891,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 665182770032601
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 490920314573569
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 831160627437518,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 948787705899256,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 882384869867666,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 132834090966638,
+					"parameters": {
+						"text": "\"Defend yourself from the Celery.\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 608431738556305,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 596819457592946,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				}
+			],
+			"sid": 680378550883250,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 661432473022091,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 805092917485819,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 389925457229757
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 894969281546945,
+							"parameters": {
+								"variable": "EricTutorial",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 906279580121044,
+							"parameters": {
+								"name": "\"showDialogBox\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Celery",
+							"sid": 239538520586512,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 907822244622313,
+							"parameters": {
+								"text": "\"Eric: Well, it appears you were killed by Celery. You are the only man I know that could pull that off.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 700201806163411,
+							"parameters": {
+								"audio-file": "killed by celery",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 215991850361404,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 868201764312041,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 870005178898825,
+							"parameters": {
+								"text": "\"Eric: Listen, I know it's your dream, but i'm intervening. You need help, so I'm going to give it to you. There, now you have the ability to shoot your sweat at the celery, destroying them instantly. Sweat bullets.. if you will. (Spacebar)\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 419139330179470,
+							"parameters": {
+								"audio-file": "ability to shoot",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 860579484673403,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 891718127818678,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 829483416269862,
+							"parameters": {
+								"text": "\"Jaden: What about my dead body!? Why do I see another version of me?\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 580033660045332,
+							"parameters": {
+								"audio-file": "dead body",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 988895119370558,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 154587755916685,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 233961018334685,
+							"parameters": {
+								"text": "\"Eric: That’s simple. That body will drop a starfruit. If you can destroy it using your sweat., you automatically gather these fruits when the body is destroyed. If there are bodies in a certain section of the dream, then you will not be able to get an additional life from that section.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 588360591303136,
+							"parameters": {
+								"audio-file": "body lives",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 473707311401291,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 292121616613696,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 295306470674785,
+							"parameters": {
+								"text": "\"Jaden: What? I don’t understand.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 907821183040218,
+							"parameters": {
+								"audio-file": "don_t understand",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 222461600266039,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 581426474653583,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 815378966510893,
+							"parameters": {
+								"text": "\"Eric: What isn’t there to understand? It’s your dream.. Maybe I should repeat it slower for you?\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 254716004418571,
+							"parameters": {
+								"audio-file": "what don_t you understand",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 724117119853182,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 857917174410856,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 564465993665232,
+							"parameters": {
+								"text": "\"Jaden: You know what? I’m not talking to you anymore. I’m blocking you on all of my social medias.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 241623159210137,
+							"parameters": {
+								"audio-file": "blocking social media",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 720312046209369,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 446211345504663,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 364485276907693,
+							"parameters": {
+								"text": "\"Eric: You scissorbill...\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 262456542148739,
+							"parameters": {
+								"audio-file": "you idiot",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 677746659760162,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 102593026946195,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 781596349216811,
+							"parameters": {
+								"variable": "lockControls",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Celery",
+							"sid": 417911815294794,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 589864343588826,
+							"parameters": {
+								"name": "\"closeDialogBox\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 606143015521877,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 179214046753372,
+							"parameters": {
+								"variable": "Lives",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 459185881820526
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 944756638815611,
+							"parameters": {
+								"variable": "EricTutorial",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 591588944513658,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 133010616425021
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Jaden",
+					"sid": 912482816901301,
+					"parameters": {
+						"comparison": 5,
+						"x-co-ordinate": "416"
+					}
+				},
+				{
+					"id": "compare-y",
+					"objectClass": "Jaden",
+					"sid": 751980288987742,
+					"parameters": {
+						"comparison": 3,
+						"y-co-ordinate": "750"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-active",
+					"objectClass": "movingUntilBlocked",
+					"sid": 656304769547593,
+					"behaviorType": "Sine",
+					"parameters": {
+						"state": "active"
+					}
+				}
+			],
+			"sid": 738742459023095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "movingUntilBlocked",
+					"sid": 171097573926273,
+					"parameters": {
+						"comparison": 5,
+						"y-co-ordinate": "672"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-active",
+					"objectClass": "movingUntilBlocked",
+					"sid": 903608687545900,
+					"behaviorType": "Sine",
+					"parameters": {
+						"state": "inactive"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Celery",
+					"sid": 426762431427846,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Celery",
+					"sid": 766365653580578,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 141836533768755
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 845015038865000,
+					"parameters": {
+						"first-value": "Celery.Count",
+						"comparison": 3,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 143277170962102,
+					"parameters": {
+						"text": "\"Collect all the starfruit and get to the portal.\""
+					}
+				}
+			],
+			"sid": 478434667162220
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-falling",
+					"objectClass": "Celery",
+					"sid": 139313633678813,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Celery",
+					"sid": 969720761854619,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				}
+			],
+			"sid": 558258232753891
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-floor",
+					"objectClass": "Celery",
+					"sid": 316032401667036,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Celery",
+					"sid": 955071581045160,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"input": "stop-ignoring"
+					}
+				}
+			],
+			"sid": 244629459394474
+		}
+	],
+	"sid": 163966579905155
+}

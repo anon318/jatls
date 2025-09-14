@@ -1,0 +1,48 @@
+{
+	"name": "tutMenuSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button4",
+					"sid": 719522647452580
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 118304276366443,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 196832102620639,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 778438423460042,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 108861903075026,
+			"isOrBlock": true
+		}
+	],
+	"sid": 800131265592134
+}

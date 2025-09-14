@@ -1,0 +1,84 @@
+{
+	"name": "DifficultyMenuSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 431501678558714,
+					"parameters": {
+						"object": "DifficultyMainMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DifficultyMainMenu",
+					"sid": 377861068541256,
+					"parameters": {
+						"text": "\"*Main Menu*\""
+					}
+				}
+			],
+			"sid": 985822969589135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 238162120326983
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DifficultyMainMenu",
+					"sid": 941694410121187,
+					"parameters": {
+						"text": "\"Main Menu\""
+					}
+				}
+			],
+			"sid": 883201222003318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 631009426432763,
+					"parameters": {
+						"object": "DifficultyMainMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 939889592143391,
+					"parameters": {
+						"variable": "Difficulty",
+						"value": "SliderBar.Value"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 307390253864192,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 675572921662597
+		}
+	],
+	"sid": 890408212804034
+}

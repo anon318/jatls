@@ -1,0 +1,1054 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 9502,
+	"name": "Jaden and the Lost Starfruit",
+	"runtime": "c2",
+	"useWorker": false,
+	"bundleAddons": true,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "XboxLive",
+			"name": "Xbox Live",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Facebook",
+			"name": "Facebook",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "ScirraArcadeV4",
+			"name": "Scirra Arcade",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Kongregate",
+			"name": "Kongregate",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "googleplay",
+			"name": "Google Play",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "InstantGames",
+			"name": "Instant Games",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Greenworks",
+			"name": "Greenworks",
+			"author": "Scirra",
+			"version": "1.0.12.0",
+			"bundled": true
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NodeWebkit",
+			"name": "NW.js",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "Multiplayer",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "XML",
+			"name": "XML",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Function",
+			"name": "Function",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "sliderbar",
+			"name": "Slider bar",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "custom",
+			"name": "Custom",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Turret",
+			"name": "Turret",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Car",
+			"name": "Car",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r95.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "3phjf8c2bcezm",
+	"cloudId": "{\"03709534077687203004_GOOGLE DRIVE\":\"10bPfrqntYwtRfoNKFe8Iof20wUjAjvrQ\",\"ae513a5920e157c1\":\"d0881e62220df349\"}",
+	"objectTypes": {
+		"items": [
+			"Text15",
+			"cheatCode",
+			"Text16",
+			"Sprite2",
+			"Text17",
+			"Text18",
+			"Sprite3",
+			"Text19",
+			"Sprite4",
+			"Text20",
+			"userText",
+			"Text22",
+			"Sprite6",
+			"StartGame",
+			"Text23",
+			"SpriteFont2",
+			"SpriteFont3",
+			"Sprite8",
+			"Sprite9",
+			"Sprite10",
+			"SpriteFont4",
+			"SpriteFont5",
+			"SpriteFont6",
+			"SpriteFont7",
+			"SpriteFont8",
+			"SpriteFont9",
+			"SpriteFont10",
+			"SpriteFont11",
+			"Sprite11",
+			"Sprite12",
+			"SpriteFont12",
+			"Text24",
+			"Sprite13",
+			"SpriteFont13",
+			"SliderBar",
+			"SpriteFont14",
+			"SpriteFont15",
+			"SCollectedWonMenu",
+			"SpriteFont16",
+			"timeTake",
+			"Sprite5",
+			"DecryptInput",
+			"pauseMenuMain2",
+			"verifyOutput",
+			"VerifyScore",
+			"verifyOutput2",
+			"heresVerification",
+			"heresVerification2",
+			"NameInput",
+			"VerifyAScore"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"Eric",
+							"Celery",
+							"Jaden",
+							"TrentSmith",
+							"DeadJaden",
+							"Lucy",
+							"LucyDead"
+						],
+						"subfolders": [],
+						"name": "Ingame Characters"
+					},
+					{
+						"items": [
+							"UICelery",
+							"UIEric",
+							"UIJaden"
+						],
+						"subfolders": [],
+						"name": "UI Characters"
+					}
+				],
+				"name": "Characters"
+			},
+			{
+				"items": [
+					"tastyTreat"
+				],
+				"subfolders": [],
+				"name": "Powerups"
+			},
+			{
+				"items": [
+					"JumpThruTile",
+					"MovingSolidTile",
+					"movingUntilBlocked",
+					"Dirt",
+					"Portal",
+					"Starfruit",
+					"Spike",
+					"InvisibleBarrier",
+					"Telporter",
+					"deathTouchMovingTile",
+					"tRight",
+					"tLeft",
+					"tUp",
+					"tDown",
+					"RightTouchControl",
+					"LeftTouchControl",
+					"JumpTouchControl",
+					"Concrete",
+					"Crate",
+					"Switch",
+					"ConcreteDoorFit",
+					"IndustrialDoor"
+				],
+				"subfolders": [],
+				"name": "Environment Items"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"paused",
+							"Sprite",
+							"SpriteFont",
+							"DialogBackground"
+						],
+						"subfolders": [],
+						"name": "Images"
+					},
+					{
+						"items": [
+							"Button",
+							"Button3",
+							"Button2",
+							"Button5",
+							"Button4",
+							"Button6",
+							"exitButton",
+							"mainMenuButton",
+							"leaderboards",
+							"mainmenuL",
+							"touchUp",
+							"facebookSync",
+							"testLevelButton",
+							"cheatCodeMenu",
+							"controllerButton1",
+							"cheatSubmit",
+							"mainMenu",
+							"HowToPlay",
+							"DiffifcultyMain",
+							"DifficultyMainMenu",
+							"CreditsMenu",
+							"ContinueGame",
+							"CheatCodes",
+							"pauseMenuMain",
+							"pauseMenuQuitGame",
+							"pauseMenuSaveGame",
+							"PlayerNameWelcome",
+							"QuitMenu"
+						],
+						"subfolders": [],
+						"name": "Buttons"
+					},
+					{
+						"items": [
+							"level",
+							"lifeText",
+							"dialog",
+							"livesText",
+							"starfruitText",
+							"Score",
+							"starfruitCollectedWonMenu",
+							"starfruitMessage",
+							"Text",
+							"Text10",
+							"Text12",
+							"Text13",
+							"Text2",
+							"Text3",
+							"Text6",
+							"Text5",
+							"Text7",
+							"Text9",
+							"Text4",
+							"Text8",
+							"timerText",
+							"timeTaken",
+							"Text11",
+							"starfruitLevelCount",
+							"Text14",
+							"starfruitCollected",
+							"highscoreText",
+							"highscoreText2",
+							"highscoreText3",
+							"versionText",
+							"updateNoticeText",
+							"healthText",
+							"motdText",
+							"lifeText2",
+							"Text21",
+							"cheatCodeSubmitted",
+							"ExtraLife",
+							"objective",
+							"proceedText",
+							"SavedGameMessage"
+						],
+						"subfolders": [],
+						"name": "Labels"
+					}
+				],
+				"name": "UI Items"
+			},
+			{
+				"items": [
+					"Turret",
+					"BulletSprite"
+				],
+				"subfolders": [],
+				"name": "Projectiles"
+			},
+			{
+				"items": [
+					"Audio",
+					"Function"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"XboxLive",
+							"Facebook",
+							"ScirraArcade",
+							"Kongregate",
+							"GooglePlay",
+							"InstantGames",
+							"Greenworks",
+							"Browser",
+							"NWjs",
+							"Multiplayer"
+						],
+						"subfolders": [],
+						"name": "Networks"
+					},
+					{
+						"items": [
+							"Gamepad",
+							"Touch",
+							"Keyboard",
+							"Mouse"
+						],
+						"subfolders": [],
+						"name": "Inputs"
+					},
+					{
+						"items": [
+							"AJAX",
+							"LocalStorage",
+							"XML"
+						],
+						"subfolders": [
+							{
+								"items": [],
+								"subfolders": [],
+								"name": "New folder"
+							}
+						],
+						"name": "Data/Storage"
+					}
+				],
+				"name": "System Items"
+			},
+			{
+				"items": [
+					"SunnySkyBackgroud",
+					"TiledBackground"
+				],
+				"subfolders": [],
+				"name": "Backgrounds"
+			}
+		]
+	},
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"Level1",
+							"Level2",
+							"Level3",
+							"Level4"
+						],
+						"subfolders": [],
+						"name": "ActiveLevels"
+					},
+					{
+						"items": [
+							"Level5",
+							"Level5b",
+							"Level6",
+							"Level7",
+							"Level8"
+						],
+						"subfolders": [],
+						"name": "InDevelopmentLevels"
+					},
+					{
+						"items": [
+							"ScrappedLevel5",
+							"ScrappedLevel6"
+						],
+						"subfolders": [],
+						"name": "ScrappedLevels"
+					}
+				],
+				"name": "Levels"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"MainMenu",
+							"MainMenuController",
+							"wonMenu",
+							"tutMenu",
+							"changelog",
+							"cheatCodeMenu",
+							"controlsMenu",
+							"ChangeDifficulty",
+							"CreditsLayout",
+							"deadMenu",
+							"beatGameMenu",
+							"leaderboards"
+						],
+						"subfolders": [],
+						"name": "MainMenuUI"
+					},
+					{
+						"items": [
+							"SplashScreen"
+						],
+						"subfolders": [],
+						"name": "LoadingMenuUI"
+					}
+				],
+				"name": "Menus"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"GlobalDeclarations",
+			"Functions"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Level1Sheet",
+					"Level2Sheet",
+					"Level3Sheet",
+					"Level4Sheet",
+					"Level5Sheet",
+					"Level6Sheet",
+					"Level5bSheet",
+					"Level7Sheet",
+					"Level8Sheet"
+				],
+				"subfolders": [],
+				"name": "Level Event Sheets"
+			},
+			{
+				"items": [
+					"deadMenuSheet",
+					"MainMenuSheet",
+					"tutMenuSheet",
+					"WonMenuSheet",
+					"beatGameMenuSheet",
+					"leaderboardsSheet",
+					"changeLog",
+					"cheatCodeEventSheet",
+					"MainMenuControllerSheet",
+					"ControlsMenuSheet",
+					"DifficultyMenuSheet",
+					"CreditsMenuSheet",
+					"SplashScreenSheet"
+				],
+				"subfolders": [],
+				"name": "Menu Event Sheets"
+			},
+			{
+				"items": [
+					"CollisionSheet",
+					"ControlSheet",
+					"PhysicsSheet",
+					"UISheet",
+					"AI Sheet"
+				],
+				"subfolders": [],
+				"name": "Mechanic Sheets"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"sound": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "Shoot.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "JadenJump.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "Footsteps.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "ouch.webm",
+							"type": "audio/webm; codecs=opus"
+						}
+					],
+					"subfolders": [],
+					"name": "Jaden Sounds"
+				},
+				{
+					"items": [
+						{
+							"name": "menu_click.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "celeryHurt.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						}
+					],
+					"subfolders": [],
+					"name": "UI Sounds"
+				},
+				{
+					"items": [
+						{
+							"name": "starfruit.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "portal.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						},
+						{
+							"name": "Switch.webm",
+							"type": "audio/webm; codecs=opus"
+						}
+					],
+					"subfolders": [],
+					"name": "Level Sounds"
+				},
+				{
+					"items": [
+						{
+							"name": "celery.ogg",
+							"type": "audio/ogg; codecs=vorbis"
+						}
+					],
+					"subfolders": [],
+					"name": "CelerySounds"
+				},
+				{
+					"items": [
+						{
+							"name": "biggest fan.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "blocking social media.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "dead body.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "don_t understand.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "Eric, that_s stupid.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "help putting sandals on.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "I didn_t think about that.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "I don_t like where this is going.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "Jerk.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "look man.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "what doing here.webm",
+							"type": "audio/webm; codecs=opus"
+						}
+					],
+					"subfolders": [],
+					"name": "Jaden Script"
+				},
+				{
+					"items": [
+						{
+							"name": "ability to shoot.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "body lives.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "doesn_t matter what you feel.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "failed game.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "killed by celery.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "peasized brain.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "wake up jaden.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "what don_t you understand.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "won game.webm",
+							"type": "audio/webm; codecs=opus"
+						},
+						{
+							"name": "you idiot.webm",
+							"type": "audio/webm; codecs=opus"
+						}
+					],
+					"subfolders": [],
+					"name": "Eric Script"
+				}
+			]
+		},
+		"music": {
+			"items": [
+				{
+					"name": "playlist.ogg",
+					"type": "audio/ogg; codecs=vorbis"
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png"
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png"
+				},
+				{
+					"name": "icon-114.png",
+					"type": "image/png"
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png"
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png"
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png"
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "title.png",
+							"type": "image/png"
+						},
+						{
+							"name": "map.png",
+							"type": "image/png"
+						},
+						{
+							"name": "pause.png",
+							"type": "image/png"
+						}
+					],
+					"subfolders": [],
+					"name": "Icons"
+				}
+			]
+		}
+	},
+	"properties": {
+		"description": "Jaden",
+		"version": "1.0",
+		"author": "Gooder Games",
+		"authorEmail": "artycheez@live.com",
+		"authorWebsite": "artyhoefer.com",
+		"appId": "com.goodergames.www",
+		"pixelRounding": true,
+		"useLoaderLayout": false,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "cover",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "landscape",
+		"enableWebGL": false,
+		"sampling": "linear",
+		"downscaling": "low",
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"clearBackground": false,
+		"enhancedAccelerationPrecision": true
+	},
+	"viewportWidth": 1000,
+	"viewportHeight": 500,
+	"firstLayout": "SplashScreen"
+}

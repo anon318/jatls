@@ -1,0 +1,107 @@
+{
+	"name": "changeLog",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "MainMenuSheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 247079782330769,
+					"parameters": {
+						"tag": "\"score\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "verifyOutput",
+					"sid": 744209499628941,
+					"parameters": {
+						"text": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 240116653839153
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 657997522766147,
+					"parameters": {
+						"tag": "\"score\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "verifyOutput",
+					"sid": 101523221353563,
+					"parameters": {
+						"text": "\"An error occured when trying to connect to Arty Hoefer's network.\""
+					}
+				}
+			],
+			"sid": 302546341616875
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 452372002667897,
+					"parameters": {
+						"object": "VerifyScore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 280548246888433,
+					"parameters": {
+						"tag": "\"score\"",
+						"url": "\"https://artyhoefer.com/api/score_decrypt.php?data=\" & DecryptInput.Text"
+					}
+				}
+			],
+			"sid": 507322727010095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 533263842987480,
+					"parameters": {
+						"object": "DifficultyMainMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 657294624747278,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 374933377721853
+		}
+	],
+	"sid": 827045188073445
+}

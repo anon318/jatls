@@ -1,0 +1,250 @@
+{
+	"name": "AI Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "wait",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 656169581740777
+		},
+		{
+			"eventType": "comment",
+			"text": "If celery is walking, set it to the walking animation"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Celery",
+					"sid": 140229984605300,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Celery",
+					"sid": 302818424304496,
+					"parameters": {
+						"animation": "\"walk\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 119044929166182
+		},
+		{
+			"eventType": "comment",
+			"text": "If celery stops, set it to the idle animation"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-stopped",
+					"objectClass": "Celery",
+					"sid": 155774244331588,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Celery",
+					"sid": 386505859628864,
+					"parameters": {
+						"animation": "\"idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 154625022715226
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-target",
+					"objectClass": "Turret",
+					"sid": 474769771285103,
+					"behaviorType": "Turret"
+				}
+			],
+			"actions": [],
+			"sid": 730635171610337,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 190267402350946,
+							"parameters": {
+								"variable": "wait",
+								"comparison": 5,
+								"value": "0.50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 132853730367606,
+							"parameters": {
+								"variable": "wait",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 152525227950181
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Turret",
+					"sid": 249049411943732
+				}
+			],
+			"actions": [
+				{
+					"id": "add-object-to-target",
+					"objectClass": "Turret",
+					"sid": 106779889858455,
+					"behaviorType": "Turret",
+					"parameters": {
+						"target": "Jaden"
+					}
+				},
+				{
+					"id": "set-predictive-aim",
+					"objectClass": "Turret",
+					"sid": 751682708802412,
+					"behaviorType": "Turret",
+					"parameters": {
+						"predictive-aim": "enabled"
+					}
+				},
+				{
+					"id": "set-rotate",
+					"objectClass": "Turret",
+					"sid": 758131256516476,
+					"behaviorType": "Turret",
+					"parameters": {
+						"rotate": "enabled"
+					}
+				}
+			],
+			"sid": 108215028426529
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 959195031027813
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 457787209914085,
+					"parameters": {
+						"variable": "wait",
+						"value": "dt"
+					}
+				}
+			],
+			"sid": 563800616083865
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 347035996979573,
+					"parameters": {
+						"first-value": "Jaden.X - Celery.X",
+						"comparison": 3,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Celery",
+					"sid": 117493493259838,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 257662965459485
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 806603678296361
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Celery",
+					"sid": 199778679366175,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 891501230473329
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 760502623108490,
+					"parameters": {
+						"variable": "CeleryKilledJaden",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 421051383252486,
+					"parameters": {
+						"variable": "shootingEnabled",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 698084049636470
+		}
+	],
+	"sid": 664398439957751
+}

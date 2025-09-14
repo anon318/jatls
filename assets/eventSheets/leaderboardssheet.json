@@ -1,0 +1,166 @@
+{
+	"name": "leaderboardsSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "second",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 575635526277021
+		},
+		{
+			"eventType": "variable",
+			"name": "minute",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 916694912069052
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "highscoreText",
+					"sid": 784736974883488
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 976220331908939,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 295135568610417,
+					"parameters": {
+						"key": "\"minutes\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 725905638494109,
+					"parameters": {
+						"key": "\"seconds\""
+					}
+				}
+			],
+			"sid": 944581408444176
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 775402245116170,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "highscoreText2",
+					"sid": 827024233545818,
+					"parameters": {
+						"text": "\"Starfruit Collected: \" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 496302529578507
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 381583629626399,
+					"parameters": {
+						"key": "\"minutes\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 742470894717865,
+					"parameters": {
+						"variable": "minute",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 602568297486155
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 758186988431158,
+					"parameters": {
+						"key": "\"seconds\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 118280297860254,
+					"parameters": {
+						"variable": "second",
+						"value": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "highscoreText3",
+					"sid": 130177598659941,
+					"parameters": {
+						"text": "\"Time: \" & minute & \" Minutes, \" & second & \" Seconds\""
+					}
+				}
+			],
+			"sid": 618492151010186
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "mainmenuL",
+					"sid": 169972754215736
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 458122803433754,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 376395126241626
+		}
+	],
+	"sid": 536809091325907
+}

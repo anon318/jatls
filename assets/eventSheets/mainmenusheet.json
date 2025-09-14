@@ -1,0 +1,2048 @@
+{
+	"name": "MainMenuSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isFlashing",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 864690427016265
+		},
+		{
+			"eventType": "variable",
+			"name": "warningDisplayed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 450955949024188
+		},
+		{
+			"eventType": "variable",
+			"name": "controllerEnabled",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 231504530161686
+		},
+		{
+			"eventType": "variable",
+			"name": "NextLevel",
+			"type": "string",
+			"initialValue": "\"Level1\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 334479316286277
+		},
+		{
+			"eventType": "variable",
+			"name": "selectCount",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 979289025373033
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 947791142417131
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 215385561428523,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 508134069792567,
+					"parameters": {
+						"layout": "\"Level\" & currentLevel"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 808907790547239,
+					"parameters": {
+						"folder": "music",
+						"audio-file-name": "\"playlist\"",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 743754362972181,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 206175230138826,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button5",
+					"sid": 402040696429363
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 176319623271464,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 823551697375668,
+					"parameters": {
+						"layout": "tutMenu"
+					}
+				}
+			],
+			"sid": 173850951934986
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "exitButton",
+					"sid": 618684969294395
+				}
+			],
+			"actions": [],
+			"sid": 287910586989014
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "UIJaden",
+					"sid": 859726211166133
+				}
+			],
+			"actions": [
+				{
+					"id": "set-fade-out-time",
+					"objectClass": "Sprite",
+					"sid": 167586994019130,
+					"behaviorType": "Fade",
+					"parameters": {
+						"fade-out-time": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 600547349889376,
+					"parameters": {
+						"variable": "hours",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 878832731879889,
+					"parameters": {
+						"variable": "minutes",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 994026144205012,
+					"parameters": {
+						"variable": "seconds",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 619228897304792,
+					"parameters": {
+						"variable": "Lives",
+						"value": "4"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 366373231299146,
+					"parameters": {
+						"variable": "currentLevel",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 593455498257987,
+					"parameters": {
+						"variable": "levelStarfruitCollected",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 248882760576884,
+					"parameters": {
+						"variable": "starfruitOnLevel",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 956683539075334,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 808869820048485,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 846346976912000,
+					"parameters": {
+						"variable": "DoorOpen",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 830470939967659,
+					"parameters": {
+						"variable": "CeleryKilledJaden",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 801366293120243,
+					"parameters": {
+						"variable": "EricTutorial",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 911275341648766,
+					"parameters": {
+						"variable": "TutDialogPlayed",
+						"value": "0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 671316559337943,
+					"parameters": {
+						"audio-file": "playlist",
+						"loop": "not-looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 212793020706589,
+					"disabled": true,
+					"parameters": {
+						"tag": "\"updateRequest\"",
+						"url": "\"https://www.artyhoefer.com/game/version.txt\""
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 795480594519635,
+					"disabled": true,
+					"parameters": {
+						"tag": "\"messageRequest\"",
+						"url": "\"https://www.artyhoefer.com/game/motd.txt\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "versionText",
+					"sid": 164970315787762,
+					"disabled": true,
+					"parameters": {
+						"text": "\"Version \" & version"
+					}
+				},
+				{
+					"id": "sign-in",
+					"objectClass": "XboxLive",
+					"sid": 569847031071051
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 157842926677562,
+					"disabled": true,
+					"parameters": {
+						"tag": "\"version\"",
+						"url": "\"http://artyhoefer.com/jatls/version.txt\""
+					}
+				}
+			],
+			"sid": 702928260725932
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "leaderboards",
+					"sid": 114757984484294
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 881477402073594,
+					"parameters": {
+						"layout": "leaderboards"
+					}
+				}
+			],
+			"sid": 222770408567494
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-platform",
+					"objectClass": "System",
+					"sid": 530143218495614,
+					"disabled": true,
+					"parameters": {
+						"platform": "html5-website"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 834925474443292,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 147103598329660,
+							"parameters": {
+								"variable": "warningDisplayed",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "alert",
+							"objectClass": "Browser",
+							"sid": 628636272132273,
+							"parameters": {
+								"message": "\"It is recommended that you run JATLS on something other than the browser, as this version has performance issues.\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 299033129127660,
+							"parameters": {
+								"variable": "warningDisplayed",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 889027886529413
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 148589424048969,
+					"parameters": {
+						"tag": "\"updateRequest\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 109550873548480,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 162324450440672,
+							"parameters": {
+								"variable": "version",
+								"comparison": 2,
+								"value": "ajax.LastData"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "updateNoticeText",
+							"sid": 316166433311825,
+							"parameters": {
+								"text": "\"An update is available, check www.artyhoefer.com to update. If you're running the Chrome OS Version it will automatically update soon.\""
+							}
+						}
+					],
+					"sid": 423865152380594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 364892707785729
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "updateNoticeText",
+							"sid": 960398014656958,
+							"parameters": {
+								"text": "\"You're running the latest version.\""
+							}
+						}
+					],
+					"sid": 215026661418854
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 885549156894304,
+					"parameters": {
+						"tag": "\"updateRequest\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "updateNoticeText",
+					"sid": 646077959674564,
+					"parameters": {
+						"text": "\"Unable to create a secure connection with Arty Hoefer's Network. There could be a network filter trying to block the connection, a problem with your network, or a problem with Arty Hoefer's Network.\""
+					}
+				}
+			],
+			"sid": 721226823098923
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "facebookSync",
+					"sid": 678685807052003
+				}
+			],
+			"actions": [
+				{
+					"id": "log-in",
+					"objectClass": "Facebook",
+					"sid": 490863570594002,
+					"parameters": {
+						"permissions": "\"public_profile\""
+					}
+				}
+			],
+			"sid": 963583263058232
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 461077009033024,
+					"parameters": {
+						"tag": "\"messageRequest\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "motdText",
+					"sid": 311215509915926,
+					"parameters": {
+						"text": "ajax.LastData"
+					}
+				}
+			],
+			"sid": 959966959809304
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 609257232048374,
+					"parameters": {
+						"tag": "\"messageRequest\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "motdText",
+					"sid": 178553612973078,
+					"parameters": {
+						"text": "\"Welcome to Jaden and The Lost Starfruit\""
+					}
+				}
+			],
+			"sid": 395993169894018
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "cheatCodeMenu",
+					"sid": 225998414826289
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 361206352838436,
+					"parameters": {
+						"layout": "cheatCodeMenu"
+					}
+				}
+			],
+			"sid": 354258744705371
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 622100459795220,
+					"parameters": {
+						"gamepad": "0"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 986578159474040
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "updateNoticeText",
+					"sid": 346673144205727,
+					"parameters": {
+						"text": "\"Switching to Controller Mode...\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 983123939605464,
+					"parameters": {
+						"variable": "controllerEnabled",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 894685242086522,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 865108623428617,
+					"parameters": {
+						"layout": "MainMenuController"
+					}
+				}
+			],
+			"sid": 784221936754172,
+			"disabled": true,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "facebookSync",
+					"sid": 632308754584189
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "System",
+					"sid": 411885113717839,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 772471407886010
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 616023855005195,
+					"parameters": {
+						"object": "StartGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 225519353483156,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 246443032652473,
+					"parameters": {
+						"layout": "\"Level\" & currentLevel"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 205208648922999,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "0"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 751102665160263,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				}
+			],
+			"sid": 591312456811867
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 921518955008129,
+					"parameters": {
+						"object": "HowToPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 938666899792927,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 657238285142462,
+					"parameters": {
+						"layout": "controlsMenu"
+					}
+				}
+			],
+			"sid": 600739748691380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 539463439463035,
+					"parameters": {
+						"object": "ContinueGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 357396127205684,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "load",
+					"objectClass": "System",
+					"sid": 907784903323340,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				}
+			],
+			"sid": 775732829228684
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 824621269617142,
+					"parameters": {
+						"object": "CheatCodes"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 168472946077730,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 787664473147030,
+					"parameters": {
+						"layout": "cheatCodeMenu"
+					}
+				}
+			],
+			"sid": 384192832760990
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 427749605985673,
+					"parameters": {
+						"object": "CheatCodes"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "CheatCodes",
+					"sid": 160694133267479,
+					"parameters": {
+						"text": "\"*Cheat Codes*\""
+					}
+				}
+			],
+			"sid": 468097751554518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 557152604628063
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "CheatCodes",
+					"sid": 738446524465881,
+					"parameters": {
+						"text": "\"Cheat Codes\""
+					}
+				}
+			],
+			"sid": 247237901117414
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 874679507991987,
+					"parameters": {
+						"object": "ContinueGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ContinueGame",
+					"sid": 119698806805460,
+					"parameters": {
+						"text": "\"*Continue Game*\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 245334014394219,
+					"parameters": {
+						"variable": "isFlashing",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 614127672074110
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 351582191569326
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ContinueGame",
+					"sid": 902130617014885,
+					"parameters": {
+						"text": "\"Continue Game\""
+					}
+				}
+			],
+			"sid": 622041523504113
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 107691972096965,
+					"parameters": {
+						"object": "StartGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "StartGame",
+					"sid": 866393669762391,
+					"parameters": {
+						"text": "\"*New Game*\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 343340646958418,
+					"parameters": {
+						"variable": "isFlashing",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 424075262312327
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 756768548540566
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "StartGame",
+					"sid": 519255490001766,
+					"parameters": {
+						"text": "\"New Game\""
+					}
+				}
+			],
+			"sid": 175809809834742
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 220843031703349,
+					"parameters": {
+						"object": "Sprite6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "StartGame",
+					"sid": 266935659346608,
+					"parameters": {
+						"text": "\"Start Game\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HowToPlay",
+					"sid": 680697204527107,
+					"parameters": {
+						"text": "\"How to Play\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "CheatCodes",
+					"sid": 108490109662189,
+					"parameters": {
+						"text": "\"Cheat Codes\""
+					}
+				}
+			],
+			"sid": 463869871053373,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 779554957575540,
+					"parameters": {
+						"object": "HowToPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "HowToPlay",
+					"sid": 998645735727449,
+					"parameters": {
+						"text": "\"*How to Play*\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 388854242387987,
+					"parameters": {
+						"variable": "isFlashing",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 277053173101300
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 160501204959218
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "HowToPlay",
+					"sid": 543444749112678,
+					"parameters": {
+						"text": "\"How to Play\""
+					}
+				}
+			],
+			"sid": 801611465564908
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 523107048914844,
+					"parameters": {
+						"object": "CreditsMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "CreditsMenu",
+					"sid": 465010395756516,
+					"parameters": {
+						"text": "\"*Credits Menu*\""
+					}
+				}
+			],
+			"sid": 764920667453200
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 378306339940641
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "CreditsMenu",
+					"sid": 198850663398688,
+					"parameters": {
+						"text": "\"Credits Menu\""
+					}
+				}
+			],
+			"sid": 127793403387848
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 934921663820891,
+					"parameters": {
+						"object": "CreditsMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 912498228627996,
+					"parameters": {
+						"layout": "CreditsLayout"
+					}
+				}
+			],
+			"sid": 882292975000819
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 491192251725712,
+					"parameters": {
+						"object": "QuitMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 225046478470255
+				}
+			],
+			"sid": 279407993504401
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 453345226420141,
+					"parameters": {
+						"object": "QuitMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "QuitMenu",
+					"sid": 189087710615587,
+					"parameters": {
+						"text": "\"*Quit Game*\""
+					}
+				}
+			],
+			"sid": 866940450427444
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 573766859812133
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "QuitMenu",
+					"sid": 246355428087584,
+					"parameters": {
+						"text": "\"Quit Game\""
+					}
+				}
+			],
+			"sid": 975196903772136
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 329455415896210,
+					"parameters": {
+						"object": "DiffifcultyMain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 852175797558423,
+					"parameters": {
+						"layout": "ChangeDifficulty"
+					}
+				}
+			],
+			"sid": 635507426821527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 737667363132397,
+					"parameters": {
+						"object": "VerifyAScore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "VerifyAScore",
+					"sid": 442871669012683,
+					"parameters": {
+						"text": "\"*Verify a Score*\""
+					}
+				}
+			],
+			"sid": 213681138926680
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 691111186422366
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "VerifyAScore",
+					"sid": 876690956363568,
+					"parameters": {
+						"text": "\"Verify a Score\""
+					}
+				}
+			],
+			"sid": 433707012692694
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 676441610189340,
+					"parameters": {
+						"object": "DiffifcultyMain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DiffifcultyMain",
+					"sid": 126985718932932,
+					"parameters": {
+						"text": "\"*Change Difficulty*\""
+					}
+				}
+			],
+			"sid": 408837173769644
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 917525560820069
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DiffifcultyMain",
+					"sid": 772602947909987,
+					"parameters": {
+						"text": "\"Change Difficulty\""
+					}
+				}
+			],
+			"sid": 706313271088317
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 991194932803839,
+					"parameters": {
+						"object": "userText"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "UIJaden",
+					"sid": 486372837871588,
+					"parameters": {
+						"scale": "10"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "UIJaden",
+					"sid": 346428059980797,
+					"parameters": {
+						"angle": "-90"
+					}
+				}
+			],
+			"sid": 637906721065550
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-ready",
+					"objectClass": "Facebook",
+					"sid": 244776440822835
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 559417233107041,
+					"parameters": {
+						"variable": "LoggedInFacebook2",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log-in",
+					"objectClass": "Facebook",
+					"sid": 412970182794915,
+					"parameters": {
+						"permissions": "\"public_profile\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 827593723660201,
+					"parameters": {
+						"variable": "LoggedInFacebook2",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 457764539478636,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-name-available",
+					"objectClass": "Facebook",
+					"sid": 460007997247432
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "PlayerNameWelcome",
+					"sid": 932123380862384,
+					"parameters": {
+						"text": "\"Welcome, \" & Facebook.FirstName"
+					}
+				}
+			],
+			"sid": 932637382831692,
+			"disabled": true,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loaded",
+					"objectClass": "GooglePlay",
+					"sid": 612167983174341
+				}
+			],
+			"actions": [
+				{
+					"id": "sign-in",
+					"objectClass": "GooglePlay",
+					"sid": 912465933234344
+				}
+			],
+			"sid": 918560433077489,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-signed-in",
+					"objectClass": "GooglePlay",
+					"sid": 702561964567383
+				}
+			],
+			"actions": [
+				{
+					"id": "request-player-details",
+					"objectClass": "GooglePlay",
+					"sid": 565620259567667
+				}
+			],
+			"sid": 493560899497104,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-player-details-received",
+					"objectClass": "GooglePlay",
+					"sid": 411358043748064
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "PlayerNameWelcome",
+					"sid": 877313404708152,
+					"parameters": {
+						"text": "\"Welcome, \" & GooglePlay.MyDisplayName"
+					}
+				}
+			],
+			"sid": 637316379257759,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 146157482279199,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-down"
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 527226867867814,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [],
+			"sid": 703029514794170,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 866563132094309,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 5,
+								"value": "4"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 171719469777198,
+							"parameters": {
+								"variable": "selectCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 825881327834020
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 419921571663018,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 637771050273892,
+							"parameters": {
+								"variable": "selectCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 567045106045572
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 610348789888579,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-up"
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 817860503853568,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [],
+			"sid": 740118195077243,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 277774597533919,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 243601559706335,
+							"parameters": {
+								"variable": "selectCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 153723307050747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405880481136454,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 3,
+								"value": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 188649503474007,
+							"parameters": {
+								"variable": "selectCount",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 999411841654821
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 902552725200623
+				}
+			],
+			"actions": [],
+			"sid": 654997038160593,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 416153221571521,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "StartGame",
+							"sid": 589428910231783,
+							"parameters": {
+								"text": "\"*New Game*\""
+							}
+						}
+					],
+					"sid": 790699168432964,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 762918802388847,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HowToPlay",
+							"sid": 760845583521652,
+							"parameters": {
+								"text": "\"*How to Play*\""
+							}
+						}
+					],
+					"sid": 132854071213917,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 227225487931192,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "VerifyAScore",
+							"sid": 703684852319849,
+							"parameters": {
+								"text": "\"*Verify a Score*\""
+							}
+						}
+					],
+					"sid": 367263729765163,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 604068100513442,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "CreditsMenu",
+							"sid": 774315638505909,
+							"parameters": {
+								"text": "\"*Credits*\""
+							}
+						}
+					],
+					"sid": 598011463059449,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 131732675957347,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "QuitMenu",
+							"sid": 166876740192288,
+							"parameters": {
+								"text": "\"*Quit Game*\""
+							}
+						}
+					],
+					"sid": 308197254268396,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 359632195529901,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 285195786666392,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 445665749475694,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 770816511451529,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 210935702242872,
+							"parameters": {
+								"audio-file": "menu_click",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 325667997063458,
+							"parameters": {
+								"layout": "\"Level\" & currentLevel"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 560396850128671,
+							"parameters": {
+								"variable": "starfruit",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 958514986714099,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 624131532176938,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 302978398064997,
+							"parameters": {
+								"audio-file": "menu_click",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 757024179335950,
+							"parameters": {
+								"layout": "controlsMenu"
+							}
+						}
+					],
+					"sid": 638025036434117,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 993287519887914,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 619068520314543,
+							"parameters": {
+								"audio-file": "menu_click",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 438098156139540,
+							"parameters": {
+								"layout": "changelog"
+							}
+						}
+					],
+					"sid": 533643394963363,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 171578440856704,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 537086643088213,
+							"parameters": {
+								"audio-file": "menu_click",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 419847000345665,
+							"parameters": {
+								"layout": "CreditsLayout"
+							}
+						}
+					],
+					"sid": 446458814047253,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 309688743496125,
+							"parameters": {
+								"variable": "selectCount",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 299291306586634,
+							"parameters": {
+								"audio-file": "menu_click",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "close",
+							"objectClass": "Browser",
+							"sid": 752079475494229
+						}
+					],
+					"sid": 531790032764322,
+					"isOrBlock": true
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 881217861272268,
+					"parameters": {
+						"object": "VerifyAScore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 609381802106358,
+					"parameters": {
+						"layout": "changelog"
+					}
+				}
+			],
+			"sid": 820070736601898
+		}
+	],
+	"sid": 240819240398178
+}

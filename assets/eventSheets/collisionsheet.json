@@ -1,0 +1,652 @@
+{
+	"name": "CollisionSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Functions"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "AI Sheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 250304745919321,
+					"parameters": {
+						"object": "Starfruit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 954815774874344,
+					"parameters": {
+						"name": "\"collectStarfruit\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Starfruit",
+					"sid": 437047433441917
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 966868397375428,
+					"parameters": {
+						"audio-file": "starfruit",
+						"loop": "not-looping",
+						"volume": "-15",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 158065031001777
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 758993801770119,
+					"parameters": {
+						"object": "Spike"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 387661398189423,
+					"parameters": {
+						"name": "\"death\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 251398574873135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 507562952673234,
+					"parameters": {
+						"object": "tastyTreat"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "tastyTreat",
+					"sid": 953081736000636
+				},
+				{
+					"id": "set-jump-strength",
+					"objectClass": "Jaden",
+					"sid": 579801744248949,
+					"behaviorType": "Platform",
+					"parameters": {
+						"jump-strength": "Jaden.Platform.JumpStrength  + 100"
+					}
+				}
+			],
+			"sid": 199506911784408
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 529359095970575,
+					"parameters": {
+						"object": "deathTouchMovingTile"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 408773325080119,
+					"parameters": {
+						"name": "\"death\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 956527124570402,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Jaden",
+					"sid": 778724867988520,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "8"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "healthText",
+					"sid": 687955900915003,
+					"parameters": {
+						"text": "\"Health: \" & jaden.health & \"%\""
+					}
+				}
+			],
+			"sid": 961594696649047,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Jaden",
+					"sid": 924252500107548,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 559125268138768,
+					"parameters": {
+						"name": "\"death\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 697889817310856
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Portal",
+					"sid": 336083389664353,
+					"parameters": {
+						"object": "Jaden"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 447856269965510,
+					"parameters": {
+						"variable": "NextLevel",
+						"value": "\"Level\" & currentLevel +1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 747987961958162,
+					"parameters": {
+						"variable": "currentLevel",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 991515470486802,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "starfruit.Count"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 453378080868988,
+					"parameters": {
+						"audio-file": "portal",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 177837407367019,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 368988767978007,
+							"parameters": {
+								"variable": "maxLevel",
+								"comparison": 2,
+								"value": "currentLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 897696856334284,
+							"parameters": {
+								"layout": "beatGameMenu"
+							}
+						}
+					],
+					"sid": 455059915919730
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 348757992583038
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 269226476152307,
+							"parameters": {
+								"layout": "wonMenu"
+							}
+						}
+					],
+					"sid": 312860428555485
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Celery",
+					"sid": 639387414764429,
+					"parameters": {
+						"object": "Jaden"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 534406049524866,
+					"parameters": {
+						"variable": "EricTutorial",
+						"value": "1"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 475129563979983,
+					"parameters": {
+						"object-to-create": "DeadJaden",
+						"layer": "1",
+						"x": "Jaden.X",
+						"y": "Jaden.Y"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 281437959627411,
+					"parameters": {
+						"name": "\"death\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 897858274709497,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 773068730346622
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Celery",
+					"sid": 933804153571760,
+					"parameters": {
+						"object": "BulletSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Celery",
+					"sid": 421979579536263,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "50"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "BulletSprite",
+					"sid": 745276987516666
+				}
+			],
+			"sid": 444270890110167,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 933342790150162,
+							"parameters": {
+								"first-value": "Celery.health",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 174887221125186,
+							"parameters": {
+								"audio-file": "celeryHurt",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 520712839768974
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 681998814833315
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 966790854402455,
+							"parameters": {
+								"audio-file": "celery",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 708967513483414
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Celery",
+					"sid": 349526450798392,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Celery",
+					"sid": 499065298143231
+				}
+			],
+			"sid": 741747003487661
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Starfruit",
+					"sid": 524566153397078
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 824939640803213,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 555317346859658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 266501473278230,
+					"parameters": {
+						"object": "deathTouchMovingTile"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 829379104714787,
+					"parameters": {
+						"object": "JumpThruTile"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 891447879158509,
+					"parameters": {
+						"object": "movingUntilBlocked"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 580104825163570,
+					"parameters": {
+						"object": "Portal"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 256044244110704,
+					"parameters": {
+						"object": "Dirt"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 715902926712540,
+					"parameters": {
+						"object": "Spike"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 514936638176905,
+					"parameters": {
+						"object": "Telporter"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 913717548534464,
+					"parameters": {
+						"object": "InvisibleBarrier"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 767454388440506,
+					"parameters": {
+						"object": "Crate"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 315599003717250,
+					"parameters": {
+						"object": "IndustrialDoor"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 343107163646173,
+					"parameters": {
+						"object": "Switch"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 650126591690160,
+					"parameters": {
+						"object": "Concrete"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 242564578627422,
+					"parameters": {
+						"object": "ConcreteDoorFit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BulletSprite",
+					"sid": 862186655570633
+				}
+			],
+			"sid": 694153107191068,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite4",
+					"sid": 942240242459316,
+					"parameters": {
+						"object": "Jaden"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 293542292884109,
+					"parameters": {
+						"layout": "cheatCodeMenu"
+					}
+				}
+			],
+			"sid": 682257458277669
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 873797454525165,
+					"parameters": {
+						"object": "DeadJaden"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BulletSprite",
+					"sid": 175908865676743
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 748776511920096,
+					"parameters": {
+						"object-to-create": "Starfruit",
+						"layer": "1",
+						"x": "DeadJaden.X",
+						"y": "DeadJaden.Y"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "DeadJaden",
+					"sid": 647229684771564
+				}
+			],
+			"sid": 420133367604087
+		}
+	],
+	"sid": 652064613632096
+}

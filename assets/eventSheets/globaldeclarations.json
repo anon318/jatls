@@ -1,0 +1,208 @@
+{
+	"name": "GlobalDeclarations",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Player Config"
+		},
+		{
+			"eventType": "variable",
+			"name": "doubleJump",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "If set to 0, double jump will be disabled. If set to 1, double jump will be enabled.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 835195930968399
+		},
+		{
+			"eventType": "variable",
+			"name": "playerSpeed",
+			"type": "number",
+			"initialValue": "330",
+			"comment": "Determines the players speed.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 323942195340802
+		},
+		{
+			"eventType": "variable",
+			"name": "shootingEnabled",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "If set to 0, shooting will be disabled. If set to 1, shooting will be enabled.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 822220645728829
+		},
+		{
+			"eventType": "variable",
+			"name": "Lives",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Holds the players lives.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 677477950333513
+		},
+		{
+			"eventType": "variable",
+			"name": "starfruit",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Holds the players collected starfruit amount.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 937943850596052
+		},
+		{
+			"eventType": "comment",
+			"text": "Level Config"
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalStarfruitForSession",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Counts the total amount of starfruit in the players session, will be used at then end game screen to show how many starfruit there were that could be collected",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 904063932243324
+		},
+		{
+			"eventType": "variable",
+			"name": "maxLevel",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "Determines what the max level will be.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 791521804338539
+		},
+		{
+			"eventType": "variable",
+			"name": "currentLevel",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "Determines what the current level is.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 419375753638155
+		},
+		{
+			"eventType": "variable",
+			"name": "starfruitOnLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Holds the amount of starfruit that are on the current level.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 142974419241491
+		},
+		{
+			"eventType": "variable",
+			"name": "levelStarfruitCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Determines how many starfruit have been collected on the current level.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 187982977009240
+		},
+		{
+			"eventType": "variable",
+			"name": "starfruitCount",
+			"type": "number",
+			"initialValue": "54",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 125638368907473
+		},
+		{
+			"eventType": "comment",
+			"text": "Game Config"
+		},
+		{
+			"eventType": "variable",
+			"name": "CeleryKilledJaden",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 396398279415781
+		},
+		{
+			"eventType": "variable",
+			"name": "version",
+			"type": "number",
+			"initialValue": "2.2",
+			"comment": "Holds the games version number.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 625751544160621
+		},
+		{
+			"eventType": "variable",
+			"name": "paused",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "If set to 0, pause mode will be disabled. If set to 1, the game will enable pause mode.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 125773905437810
+		},
+		{
+			"eventType": "variable",
+			"name": "LoggedInFacebook2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "If 0, then we've attempted login once.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 733154239836365
+		},
+		{
+			"eventType": "variable",
+			"name": "lockControls",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 447351428314266
+		},
+		{
+			"eventType": "variable",
+			"name": "Difficulty",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Determines the difficulty",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 118059293247441
+		},
+		{
+			"eventType": "variable",
+			"name": "ObjectiveText",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Holds the current objective.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 805415039124208
+		},
+		{
+			"eventType": "variable",
+			"name": "isDead",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 173467812491339
+		}
+	],
+	"sid": 960119468408737
+}

@@ -1,0 +1,32 @@
+{
+	"name": "CreditsMenuSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 496375960935199
+				}
+			],
+			"actions": [
+				{
+					"id": "set-fade-out-time",
+					"objectClass": "Sprite",
+					"sid": 191207460815214,
+					"behaviorType": "Fade",
+					"parameters": {
+						"fade-out-time": "0"
+					}
+				}
+			],
+			"sid": 810070675635776
+		}
+	],
+	"sid": 751798046683786
+}

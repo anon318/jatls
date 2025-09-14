@@ -1,0 +1,391 @@
+{
+	"name": "Level2Sheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "AI Sheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "variable",
+			"name": "score2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "keepsScore",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 248751230097646
+		},
+		{
+			"eventType": "comment",
+			"text": "Use the down arrow to allow the player to deliberately drop down through a jump-thru platform."
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player falls off the bottom of the layout, restart the level."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "starfruitMessage",
+					"sid": 670079889283296
+				}
+			],
+			"actions": [],
+			"sid": 724546605071409
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Jaden",
+					"sid": 358781522555444,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "LayoutHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 783010631283912
+				}
+			],
+			"sid": 974293166406021
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 250678671367026,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 331012183842037,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 254039701935862
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 453357081520810
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 317749976533785,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 358468273464034,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 872680817765143,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 589576023107401,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 389654255664858,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 687992601062084,
+					"parameters": {
+						"text": "\"Collect all the Starfruit and exit through the portal.\""
+					}
+				}
+			],
+			"sid": 571274252909219,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 471826291268666,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 496628593230131,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 763789993371013
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 244886624934576,
+					"parameters": {
+						"variable": "Difficulty",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Celery",
+					"sid": 181139823769126,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 770642009686420
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 213466017007657
+				}
+			],
+			"actions": [],
+			"sid": 979410982931083,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 120307716991452,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 795161653501693,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "200"
+							}
+						}
+					],
+					"sid": 185036266194495
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 796542817418473
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 950292457595399,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "350"
+							}
+						}
+					],
+					"sid": 818581595261213
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 366352399842593,
+					"parameters": {
+						"first-value": "Celery.X - Jaden.X",
+						"comparison": 3,
+						"second-value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Jaden",
+					"sid": 311142689219545,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 371073560014000,
+					"parameters": {
+						"object": "Celery",
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 483824343001000,
+					"parameters": {
+						"name": "\"showDialogBox\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "dialog",
+					"sid": 286525863165266,
+					"parameters": {
+						"text": "\"This is a celery, the only way to defeat these evil creatures is by shooting them. Press SPACEBAR to shoot the celery.\""
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 660240680890899,
+					"parameters": {
+						"tag": "\"dialogProceed\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 450953164772632,
+					"parameters": {
+						"variable": "lockControls",
+						"value": "0"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 856894121292850,
+					"parameters": {
+						"name": "\"closeDialogBox\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 996742461114337,
+					"parameters": {
+						"object": "Celery",
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Jaden",
+					"sid": 749814011513167,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "stop-ignoring"
+					}
+				}
+			],
+			"sid": 161188856748582,
+			"disabled": true
+		}
+	],
+	"sid": 186964142485334
+}

@@ -1,0 +1,670 @@
+{
+	"name": "Level1Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "TutDialogPlayed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 914284327777180
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player touches a starfruit, then destroy it"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 174155374624572,
+					"parameters": {
+						"object": "Starfruit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Starfruit",
+					"sid": 923211869842183
+				}
+			],
+			"sid": 461705818516159
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 501852605309005,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 170450464660284,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 429190841170026
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 230753047717052
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 727880361016462,
+					"parameters": {
+						"text": "\"Talk to Eric.\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 119584756049866,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 848510699927642,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 318815164529846,
+					"parameters": {
+						"variable": "starfruitOnLevel",
+						"value": "starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 847135903032995,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & starfruitOnLevel"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 934034080069169,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				}
+			],
+			"sid": 220696737871168,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 563863897770713,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 811393520511057,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 114934276558156
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 948299892185046,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 327108725266412,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "150"
+							}
+						}
+					],
+					"sid": 900729696238463
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 834443685853416
+						}
+					],
+					"actions": [],
+					"sid": 204190519767080,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 277532681889990,
+									"parameters": {
+										"variable": "Difficulty",
+										"comparison": 0,
+										"value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "Celery",
+									"sid": 204433824804036,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"speed": "200"
+									}
+								}
+							],
+							"sid": 847306445389606
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 994912825726437
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "Celery",
+									"sid": 169374280239430,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"speed": "350"
+									}
+								}
+							],
+							"sid": 987758086943000
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 552531088173597,
+							"parameters": {
+								"variable": "TutDialogPlayed",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Eric",
+							"sid": 922106691830938,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Jaden",
+							"sid": 608228112993761,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Eric",
+							"sid": 227419676638100,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 541532491575031,
+							"parameters": {
+								"name": "\"showDialogBox\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 989261174361779,
+							"parameters": {
+								"text": "\"Jaden: Woah, Eric, I didn't see you there.\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 232591516093015,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 594689263951168,
+							"parameters": {
+								"text": "\"Eric: Jaden, you fool. Wake up right now. Your body is actually inside of a starfruit, and if you don’t wake up and preserve it, then it will die--and so will your soul.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 653917383658321,
+							"parameters": {
+								"audio-file": "wake up jaden",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 166560624975580,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 697015038887905,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 440409062000395,
+							"parameters": {
+								"text": "\"Jaden: Eric, that’s stupid.\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 594172894932826,
+							"parameters": {
+								"audio-file": "Eric, that_s stupid",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 444851222988497,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 672693821067490,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 708469653695180,
+							"parameters": {
+								"audio-file": "doesn_t matter what you feel",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 663077640145467,
+							"parameters": {
+								"text": "\"Eric: Yeah, well, it’s true, so it doesn’t really matter what you feel about it.\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 240788771162802,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 978481218373496,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 470139288737083,
+							"parameters": {
+								"audio-file": "Jerk",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 418943606005668,
+							"parameters": {
+								"text": "\"Jaden: Why are you such a jerk?\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 611758096470528,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 740379847128330,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 206724700246058,
+							"parameters": {
+								"audio-file": "peasized brain",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 795434863823176,
+							"parameters": {
+								"text": "\"Eric: Actually I’m trying to help you, but your pea-sized brain wouldn’t be able to comprehend something even when it’s as obvious as the bright blue sky.\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 241737761840561,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 251847187984710,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 303732783267842,
+							"parameters": {
+								"audio-file": "look man",
+								"loop": "not-looping",
+								"volume": "-5",
+								"tag-optional": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 349621542963705,
+							"parameters": {
+								"text": "\"Jaden: Look man, I really don’t want to do this right now. I’m leaving.\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 681657435258190,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 850260814478161,
+							"parameters": {
+								"tag": "\"dialog\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 864958261993914,
+							"parameters": {
+								"text": "\"*Jaden ignores the advice that Eric gives him, blocking him on all social media, and continues on this fool’s errand he dreamt up. His first mission is to escape the compound he’s being held in and go to the Tasty Treats factory.*\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 241149309804877,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Jaden",
+							"sid": 255164398546895,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 672151036697082,
+							"parameters": {
+								"variable": "lockControls",
+								"value": "0"
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 687206999266492,
+							"parameters": {
+								"name": "\"closeDialogBox\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Eric",
+							"sid": 726997582939413,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "-200"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Eric",
+							"sid": 414667051796149,
+							"behaviorType": "Rotate",
+							"parameters": {
+								"speed": "729"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Eric",
+							"sid": 880702603472293,
+							"disabled": true,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "objective",
+							"sid": 791325326178831,
+							"parameters": {
+								"text": "\"Collect all the Starfruit and exit through the portal.\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 774523317693862,
+							"parameters": {
+								"variable": "TutDialogPlayed",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 172837078682186
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 522238285192447
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "objective",
+							"sid": 756060016154929,
+							"parameters": {
+								"text": "\"Collect all the Starfruit and exit through the portal.\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Eric",
+							"sid": 104533885558701,
+							"parameters": {
+								"x": "999999999999999",
+								"y": "999999999999"
+							}
+						}
+					],
+					"sid": 782414111028324
+				}
+			]
+		}
+	],
+	"sid": 131454424654778
+}

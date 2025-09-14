@@ -1,0 +1,234 @@
+{
+	"name": "beatGameMenuSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "CreditsMenuSheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "mainMenuButton",
+					"sid": 216107577564910
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 661781271318540,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 896011519839967,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 784957161733609,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 713788150603588,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "timeTaken",
+					"sid": 119806844403152
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 839960288012125,
+					"parameters": {
+						"audio-file": "won game",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"game\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "timeTake",
+					"sid": 419801556938733,
+					"parameters": {
+						"text": "\"It took you: \" & hours & \" Minute(s), \" & minutes & \" Second(s) to win\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "SCollectedWonMenu",
+					"sid": 600040022482958,
+					"parameters": {
+						"text": "\"Total Starfruit collected: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 897987242606064,
+					"parameters": {
+						"variable": "stopTimer",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 191509305224473
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 681431816104997,
+					"parameters": {
+						"object": "pauseMenuMain2"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 841476453352477,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 727978453263963,
+							"parameters": {
+								"first-value": "NameInput.Text",
+								"comparison": 0,
+								"second-value": "\"\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NameInput",
+							"sid": 526473491020004,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "heresVerification2",
+							"sid": 197603942784168,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "request-url",
+							"objectClass": "AJAX",
+							"sid": 794334146800406,
+							"parameters": {
+								"tag": "\"score\"",
+								"url": "\"https://artyhoefer.com/api/score_encrypt.php?ac&data=\"  & NameInput.Text & \" was the name entered upon completion of this session. There were a total of \" & starfruit & \" Starfruit collected, it took  \" & hours & \" Minute(s) \" & minutes & \" Second(s) to complete this session.\""
+							}
+						}
+					],
+					"sid": 278737039655851
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 578413676269358,
+					"parameters": {
+						"tag": "\"score\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DecryptInput",
+					"sid": 988537313116014,
+					"parameters": {
+						"text": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "DecryptInput",
+					"sid": 535576583438306,
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "DecryptInput",
+					"sid": 211210494777043,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "heresVerification",
+					"sid": 812419253682140,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 991015616867308
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "AJAX",
+					"sid": 444603265940834,
+					"parameters": {
+						"tag": "\"score\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DecryptInput",
+					"sid": 156911689159973,
+					"parameters": {
+						"text": "\"An error occured when trying to connect to Arty Hoefer's network.\""
+					}
+				}
+			],
+			"sid": 894150037921562
+		}
+	],
+	"sid": 148665403693170
+}

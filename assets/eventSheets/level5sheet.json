@@ -1,0 +1,583 @@
+{
+	"name": "Level5Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "DoorOpen",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Is the door open or not?",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 398304900612225
+		},
+		{
+			"eventType": "variable",
+			"name": "TreatDialogPlayed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 403902159873248
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 732365374371067,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 811165775097662,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 875117250303775
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 473926216283791
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 408274359459961,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 387080072417528,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 430852398919593,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "level",
+					"sid": 802175559904992,
+					"parameters": {
+						"text": "\"Level: 5\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 936258110455930,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 897329762536875,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "objective",
+					"sid": 522061081721266,
+					"parameters": {
+						"x": "301",
+						"y": "248"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 221209104635301,
+					"parameters": {
+						"text": "\"Find a way to open that door.\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 614106858514658,
+					"parameters": {
+						"variable": "DoorOpen",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 733499743227996,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 485317217895182,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 344295839018795,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 891128730556844
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 235604113977702,
+					"parameters": {
+						"variable": "Difficulty",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Celery",
+					"sid": 252231121364348,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 385904071409933
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 427362402737090
+				}
+			],
+			"actions": [],
+			"sid": 236341375710887,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 970011165746529,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 608263108687946,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "200"
+							}
+						}
+					],
+					"sid": 885874062483034
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 491754903353149
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 118149235140925,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "350"
+							}
+						}
+					],
+					"sid": 373149880002741
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Switch",
+					"sid": 954715702006905,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Jaden"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 855505237931194,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 996042943234523,
+							"parameters": {
+								"key": 70
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 411243358679503,
+							"disabled": true,
+							"parameters": {
+								"variable": "DoorOpen",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 862435081233420,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-x"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Switch",
+							"sid": 763657625340867,
+							"parameters": {
+								"animation": "\"On\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "IndustrialDoor",
+							"sid": 807463443683000,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-cycle-position",
+							"objectClass": "IndustrialDoor",
+							"sid": 581965394647212,
+							"behaviorType": "Sine",
+							"parameters": {
+								"cycle-position": "0.5"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 784861725581093,
+							"parameters": {
+								"variable": "DoorOpen",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "objective",
+							"sid": 529767786773874,
+							"parameters": {
+								"text": "\"Go inside the Tasty Treats factory.\""
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 421610096497151,
+							"parameters": {
+								"name": "\"showDialogBox\"",
+								"parameter-n": []
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 647327896823129,
+							"parameters": {
+								"text": "\"Jaden: That... actually opened the door. Well that was pretty easy.\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 643144350582700,
+							"parameters": {
+								"tag": "\"dialogProceed\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 617769384571777,
+							"parameters": {
+								"variable": "lockControls",
+								"value": "0"
+							}
+						},
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 786310600672555,
+							"parameters": {
+								"name": "\"closeDialogBox\"",
+								"parameter-n": []
+							}
+						}
+					],
+					"sid": 365187562164951,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "IndustrialDoor",
+					"sid": 879731741130931,
+					"parameters": {
+						"comparison": 3,
+						"y-co-ordinate": "424"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-active",
+					"objectClass": "IndustrialDoor",
+					"sid": 849170913772097,
+					"behaviorType": "Sine",
+					"parameters": {
+						"state": "inactive"
+					}
+				}
+			],
+			"sid": 962634755969918
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 961528508072367,
+					"parameters": {
+						"first-value": "tastyTreat.Count",
+						"comparison": 3,
+						"second-value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 610691184076480,
+					"parameters": {
+						"variable": "TreatDialogPlayed",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 927478345574028,
+					"parameters": {
+						"name": "\"showDialogBox\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "dialog",
+					"sid": 236841864688844,
+					"parameters": {
+						"text": "\"Jaden: What a delectable treat for my taste buds. That made me feel really good. I love the Tasty Treat factory.\""
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 977592830316861,
+					"parameters": {
+						"tag": "\"dialogProceed\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 396049177311297,
+					"parameters": {
+						"variable": "lockControls",
+						"value": "0"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 934188235626556,
+					"parameters": {
+						"name": "\"closeDialogBox\"",
+						"parameter-n": []
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 795675742162086,
+					"parameters": {
+						"variable": "TreatDialogPlayed",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 853447820561943,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Jaden",
+					"sid": 345839547402369,
+					"parameters": {
+						"object": "InvisibleBarrier"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 333974017979813,
+					"parameters": {
+						"layout": "Level5b"
+					}
+				}
+			],
+			"sid": 719433060583248
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "IndustrialDoor",
+					"sid": 884681276146879,
+					"parameters": {
+						"comparison": 5,
+						"y-co-ordinate": "488.842"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-active",
+					"objectClass": "IndustrialDoor",
+					"sid": 394487636805340,
+					"behaviorType": "Sine",
+					"parameters": {
+						"state": "inactive"
+					}
+				}
+			],
+			"sid": 144090188037510,
+			"disabled": true
+		}
+	],
+	"sid": 508986643071023
+}

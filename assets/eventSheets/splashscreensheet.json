@@ -1,0 +1,39 @@
+{
+	"name": "SplashScreenSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Wait 3 seconds and go to main menu"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Sprite",
+					"sid": 276203335807150
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 446113221605805,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 288847831326346,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 608900862791544
+		}
+	],
+	"sid": 266522112000295
+}

@@ -1,0 +1,50 @@
+{
+	"name": "PhysicsSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Jaden",
+					"sid": 207244998694958,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "LayoutHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 996315628362916,
+					"parameters": {
+						"name": "\"death\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 350713184286061
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Eric",
+					"sid": 476102382824832
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Eric",
+					"sid": 315947062631546
+				}
+			],
+			"sid": 275328498080618
+		}
+	],
+	"sid": 884458305815073
+}

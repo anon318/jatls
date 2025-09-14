@@ -1,0 +1,275 @@
+{
+	"name": "Level6Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "DoorOpen2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Is the door open or not?",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 477160854678863
+		},
+		{
+			"eventType": "variable",
+			"name": "TreatDialogPlayed2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 576682293810560
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 111166820229012,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 770390177912144,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 596086537186288
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 968727487682959
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 763576534481036,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 857259883750466,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 620542174343560,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "level",
+					"sid": 316086775681746,
+					"parameters": {
+						"text": "\"Level: 6\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 989660910385940,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "objective",
+					"sid": 706399963751053,
+					"parameters": {
+						"x": "301",
+						"y": "248"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 539723897020605,
+					"parameters": {
+						"text": "\"Eat the Tasty Treats and find the portal.\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 837868383810446,
+					"parameters": {
+						"variable": "DoorOpen",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 280661913701312,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 177565893176721,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 562705936169793,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 411879793324506
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 196850052997105,
+					"parameters": {
+						"variable": "Difficulty",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Celery",
+					"sid": 164024407752122,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 555966513375234
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 176751799346265
+				}
+			],
+			"actions": [],
+			"sid": 489555444070344,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 389920623369774,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 930127996008323,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "200"
+							}
+						}
+					],
+					"sid": 249388190266353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 995393530303190
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 237137394631308,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "350"
+							}
+						}
+					],
+					"sid": 764517232322660
+				}
+			]
+		}
+	],
+	"sid": 726660966249497
+}

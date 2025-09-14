@@ -1,0 +1,220 @@
+{
+	"name": "Level7Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "DoorOpen4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Is the door open or not?",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 231121095859759
+		},
+		{
+			"eventType": "variable",
+			"name": "TreatDialogPlayed4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 700507492190104
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 570008991353579,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 723543541826273,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 114775681997409
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 173215577840136
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 505153619463937,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 416184428726724,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 705574931689207,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "level",
+					"sid": 118756007032501,
+					"parameters": {
+						"text": "\"Level: 7\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 908246512187392,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 471925727936486,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "objective",
+					"sid": 439065495560510,
+					"parameters": {
+						"x": "301",
+						"y": "248"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 806186497827449,
+					"parameters": {
+						"text": "\"Find the starfruit and get the heck outta there.\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 173861672901296,
+					"parameters": {
+						"variable": "DoorOpen",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 427051732788910,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 882515867405100,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 872227293431129,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 228484994090528
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 577498497791816,
+					"parameters": {
+						"variable": "Difficulty",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Celery",
+					"sid": 467197220585402,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 894217016786793
+		}
+	],
+	"sid": 738782828194861
+}

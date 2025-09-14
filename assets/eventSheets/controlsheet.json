@@ -1,0 +1,1607 @@
+{
+	"name": "ControlSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "p",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 645056592721639
+		},
+		{
+			"eventType": "variable",
+			"name": "CrouchLock",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 586197117344356
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "Use the down arrow to allow the player to deliberately drop down through a jump-thru platform."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 134513059326735,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [],
+			"sid": 429639907689828,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 176166019470639,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fall-through",
+							"objectClass": "Jaden",
+							"sid": 326810185047831,
+							"behaviorType": "Platform"
+						}
+					],
+					"sid": 243136237952951
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Allow WASD as alternate controls to arrow keys."
+		},
+		{
+			"eventType": "variable",
+			"name": "inAir",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 406497946650893
+		},
+		{
+			"eventType": "variable",
+			"name": "FootstepsActive",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 643596881333615
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 911925990174583,
+					"parameters": {
+						"key": 87
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 308021479417744,
+					"parameters": {
+						"object": "JumpTouchControl"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 950273302965148,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-up"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 358049836881120,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 612711629538877,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 338509432595032,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Jaden",
+							"sid": 464524333398659,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 851921898444461
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 963972323105358,
+					"parameters": {
+						"object": "LeftTouchControl"
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 793323401716368,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 302118119284341,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-left"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 173539945226933,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 903797768534772,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Jaden",
+							"sid": 246528453927829,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 690078838325552
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 225872769418173,
+					"parameters": {
+						"key": 83
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 293049710053201,
+					"parameters": {
+						"object": "tDown"
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 634680216688698,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-down"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 867144380008496,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 946835225581074,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fall-through",
+							"objectClass": "Jaden",
+							"sid": 381780223292788,
+							"behaviorType": "Platform"
+						}
+					],
+					"sid": 235433804689548
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 685570646755754,
+					"parameters": {
+						"key": 68
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 849822485874993,
+					"parameters": {
+						"object": "RightTouchControl"
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 139040930840845,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-right"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 474897056559441,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 399906798377372,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Jaden",
+							"sid": 342806818152088,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 859357482970097
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "comment",
+			"text": "Mirror the player's image so they appear facing the right way when moving left or right."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 554374906694091,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 628064097392749,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 665880836340030,
+					"parameters": {
+						"object": "LeftTouchControl"
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 211957251470788,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-left"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 911406938883608,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 881262317868001,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Jaden",
+							"sid": 704403953770674,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 813964376835271
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 859468344470418,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 826787027160511,
+					"parameters": {
+						"key": 68
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 906314859871732,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-right"
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 671839499875910,
+					"parameters": {
+						"object": "RightTouchControl"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 107943187055793,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 855470648195652,
+							"parameters": {
+								"variable": "lockControls",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Jaden",
+							"sid": 168797799816599,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 734395186524758
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Jaden",
+					"sid": 882586453755926,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "is-on-floor",
+					"objectClass": "Jaden",
+					"sid": 228248986746313,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 206167170168654,
+					"parameters": {
+						"variable": "CrouchLock",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jaden",
+					"sid": 157329511517467,
+					"parameters": {
+						"animation": "\"walk\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 690919884983450,
+					"parameters": {
+						"variable": "inAir",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 990387051616197,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 476394118365441,
+							"parameters": {
+								"variable": "FootstepsActive",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 715637958724655,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 341963567728713
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 607470581768805,
+							"disabled": true,
+							"parameters": {
+								"audio-file": "Footsteps",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"Footsteps\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 177257368792346,
+							"disabled": true,
+							"parameters": {
+								"variable": "FootstepsActive",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 992818066075596,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-stopped",
+					"objectClass": "Jaden",
+					"sid": 633582346991733,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "is-on-floor",
+					"objectClass": "Jaden",
+					"sid": 846521954809706,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 927200633524133,
+					"parameters": {
+						"variable": "CrouchLock",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jaden",
+					"sid": 587278767495728,
+					"parameters": {
+						"animation": "\"idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 524291910463635,
+					"parameters": {
+						"tag": "\"Footsteps\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 258676933211499,
+					"parameters": {
+						"variable": "inAir",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 631552575648551,
+					"disabled": true,
+					"parameters": {
+						"variable": "FootstepsActive",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 807417272130464
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-jumping",
+					"objectClass": "Jaden",
+					"sid": 577803939237461,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jaden",
+					"sid": 371819140437039,
+					"parameters": {
+						"animation": "\"jump\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 952560162013740,
+					"parameters": {
+						"tag": "\"Footsteps\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 569927047515687,
+					"disabled": true,
+					"parameters": {
+						"variable": "FootstepsActive",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 954867720565959,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 208751669501619,
+							"parameters": {
+								"variable": "inAir",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 778657493259999,
+							"parameters": {
+								"audio-file": "JadenJump",
+								"loop": "not-looping",
+								"volume": "-5",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 263657490981934,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 234505911187539,
+									"parameters": {
+										"variable": "inAir",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 141690900572850
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fall",
+					"objectClass": "Jaden",
+					"sid": 340270527295055,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 127242978661243,
+					"parameters": {
+						"variable": "CrouchLock",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jaden",
+					"sid": 652826073147679,
+					"parameters": {
+						"animation": "\"idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 394515994730423,
+					"parameters": {
+						"tag": "\"Footsteps\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 119425598546976,
+					"parameters": {
+						"variable": "inAir",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 941618158603927,
+					"disabled": true,
+					"parameters": {
+						"variable": "FootstepsActive",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 678916050356626
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 502230933096726,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 4,
+						"value": "-100"
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 762855517105211,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 2,
+						"value": "gamepad.Axis(0,0)/4"
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 293178170627487,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 4,
+						"value": "-Gamepad.Axis(0,0)/4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 968597992901065,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Jaden",
+					"sid": 258782572946973,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 391979014755523
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 151267020529535,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 2,
+						"value": "100"
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 455226110386920,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 4,
+						"value": "gamepad.Axis(0,0)/4"
+					}
+				},
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 488206718380496,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 2,
+						"value": "-Gamepad.Axis(0,0)/4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 405937794132021,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Jaden",
+					"sid": 632605184657731,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 268191979370419
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 178722575122568,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 548437777063049,
+					"parameters": {
+						"gamepad": "0",
+						"button": "right-shoulder-trigger"
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 862256045687684,
+					"disabled": true,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [],
+			"sid": 504523618351909,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 224123021798300,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Jaden",
+							"sid": 744471727732784,
+							"parameters": {
+								"object": "BulletSprite",
+								"layer": "1",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 311316683946036,
+							"parameters": {
+								"audio-file": "Shoot",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 570783545874267,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 952383207443839,
+									"parameters": {
+										"variable": "CrouchLock",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "BulletSprite",
+									"sid": 693761569445565,
+									"parameters": {
+										"y": "BulletSprite.Y +10"
+									}
+								}
+							],
+							"sid": 155569181319954
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "Jaden",
+									"sid": 852670292220675
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "BulletSprite",
+									"sid": 627207693761942,
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 879836050102328,
+									"parameters": {
+										"seconds": "0.10"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "BulletSprite",
+									"sid": 913063562348386,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 591292587014671
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 188581723394386
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 270914443486308,
+									"parameters": {
+										"seconds": "0.10"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "BulletSprite",
+									"sid": 711725671312661,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 793078307021634
+						}
+					]
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 321253825896484,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [],
+			"sid": 902977301464954,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 285501963389631,
+							"parameters": {
+								"variable": "p",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Sprite6",
+							"sid": 382586869583453,
+							"parameters": {
+								"x": "99999",
+								"y": "99999"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuMain",
+							"sid": 716538920438827,
+							"parameters": {
+								"x": "9999",
+								"y": "99999"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuSaveGame",
+							"sid": 312479910361561,
+							"parameters": {
+								"x": "99999",
+								"y": "99999"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuQuitGame",
+							"sid": 347980835731424,
+							"parameters": {
+								"x": "999999",
+								"y": "999999"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 143768084905166,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 629450835300581,
+							"parameters": {
+								"variable": "p",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 831363304504389,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 548796171879049,
+							"parameters": {
+								"variable": "stopTimer",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SavedGameMessage",
+							"sid": 764483228641994,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 813691968775195,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 756809451540262,
+									"parameters": {
+										"variable": "CeleryKilledJaden",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 322631898391407,
+									"parameters": {
+										"variable": "shootingEnabled",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 807397914475601
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 241627238685093
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "Sprite6",
+							"sid": 206158363186479,
+							"parameters": {
+								"width": "242",
+								"height": "120"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Sprite6",
+							"sid": 206175312710047,
+							"parameters": {
+								"x": "323",
+								"y": "243"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuMain",
+							"sid": 760915984157728,
+							"parameters": {
+								"x": "208",
+								"y": "200"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuSaveGame",
+							"sid": 692047555625057,
+							"parameters": {
+								"x": "208",
+								"y": "236"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "pauseMenuQuitGame",
+							"sid": 569756031865707,
+							"parameters": {
+								"x": "208",
+								"y": "271"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "SavedGameMessage",
+							"sid": 344056274394915,
+							"parameters": {
+								"x": "245",
+								"y": "161"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 646442555535782,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 169347281180266,
+							"parameters": {
+								"variable": "p",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 849069799172440,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 759619888396936,
+							"parameters": {
+								"variable": "stopTimer",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 782225575006026
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 827642179382379,
+					"parameters": {
+						"key": 17
+					}
+				},
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 383976564212486,
+					"parameters": {
+						"gamepad": "0",
+						"button": "right-shoulder-button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 784888020616309,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 444481332005123,
+							"parameters": {
+								"variable": "dOpen"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 595678508863986,
+							"parameters": {
+								"variable": "CrouchLock",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Jaden",
+							"sid": 567126843544212,
+							"parameters": {
+								"animation": "\"Crouch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Jaden",
+							"sid": 202843531716888,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						}
+					],
+					"sid": 934249317550415,
+					"isOrBlock": true
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-released",
+					"objectClass": "Gamepad",
+					"sid": 266401501881901,
+					"parameters": {
+						"gamepad": "0",
+						"button": "right-shoulder-button"
+					}
+				},
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 322296953683786,
+					"parameters": {
+						"key": 17
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Jaden",
+					"sid": 436292031855395,
+					"parameters": {
+						"animation": "\"idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 859610405302750,
+					"parameters": {
+						"variable": "CrouchLock",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 660442699858949,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 886443204026687,
+							"parameters": {
+								"variable": "dOpen"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "Jaden",
+							"sid": 877595662448298,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						}
+					],
+					"sid": 283834265743510
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-mirrored",
+					"objectClass": "Jaden",
+					"sid": 118907556484294
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 963776024169589,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 835329209031424,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 377788576688105
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-mirrored",
+					"objectClass": "Jaden",
+					"sid": 922387693513718
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 275378077162836,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 277888074037287,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 344647930840206
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-mirrored",
+					"objectClass": "Jaden",
+					"sid": 190909597375026,
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 957887932937557,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 964666004304738,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 796893157187986
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-mirrored",
+					"objectClass": "Jaden",
+					"sid": 796632019593454,
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 878264299725176,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Jaden",
+					"sid": 915513775793831,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 904854056188169
+		}
+	],
+	"sid": 770889390507279
+}

@@ -1,0 +1,402 @@
+{
+	"name": "Level4Sheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 655092920952094,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 484586764702967,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 311359751418376
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 215740392732931
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 883498290772087,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 398555467990282,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 123980899827321,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 532139225091391,
+					"parameters": {
+						"text": "\"Activate the portal and get out of there.\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 215460206292148,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 285766635504852,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				}
+			],
+			"sid": 667818505301485,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 293514462520889,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 731895630313046,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 201007670574617
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 267281302534616,
+					"parameters": {
+						"variable": "Difficulty",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Celery",
+					"sid": 679596857091444,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 523880469783035
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 446662748853922
+				}
+			],
+			"actions": [],
+			"sid": 500600161871860,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812177868373084,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 542257200567052,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "200"
+							}
+						}
+					],
+					"sid": 453641742199775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 516690475484271
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Celery",
+							"sid": 387660064797396,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"speed": "350"
+							}
+						}
+					],
+					"sid": 801160627671015
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Jaden",
+					"sid": 333800587335951,
+					"disabled": true,
+					"parameters": {
+						"comparison": 5,
+						"x-co-ordinate": "150"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 789423788585709,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Eric",
+							"sid": 943191895251346,
+							"parameters": {
+								"instance-variable": "dialogPlayed",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Eric",
+							"sid": 890610414591474,
+							"parameters": {
+								"instance-variable": "dialogPlayed",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 881731037533333,
+							"parameters": {
+								"text": "\"Eric: Hello sir I am Eric, you're Jaden right?\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 492085045267561,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 980162796366044,
+							"parameters": {
+								"text": "\"Jaden: Yes this is Jaden.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 496878325090636,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 502402376981705,
+							"parameters": {
+								"text": "\"Eric: You're...You're the chosen one. I need to show you how to use your weapon.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 584272714812339,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 983180999271522,
+							"parameters": {
+								"text": "\"Jaden: Yes i'm the chosen one, go ahead and show me how to use my weapon.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 475860153419374,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 151260889348716,
+							"parameters": {
+								"text": "\"Eric: Press space bar and you will fire your weapon.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 189371381307802,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 618362771262240,
+							"parameters": {
+								"text": "\"Eric: Okay, that's all I have time for. I must go now.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 231177739466814,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 806364145320005,
+							"parameters": {
+								"text": "\"Eric: Okay, that's all I have time for. I must go now.\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Eric",
+							"sid": 470861475886544
+						},
+						{
+							"id": "set-text",
+							"objectClass": "dialog",
+							"sid": 382080941395824,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 447057489484203,
+					"disabled": true
+				}
+			]
+		}
+	],
+	"sid": 173950115864244
+}

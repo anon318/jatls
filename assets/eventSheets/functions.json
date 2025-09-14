@@ -1,0 +1,561 @@
+{
+	"name": "Functions",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "previousStarfruitCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Used to detect starfruit memory editing",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 849807196922979
+		},
+		{
+			"eventType": "variable",
+			"name": "dOpen",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 794295795788604
+		},
+		{
+			"eventType": "comment",
+			"text": "Initiates when the player dies, subtracts the lives and plays the death sound"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 947583108435834,
+					"parameters": {
+						"name": "\"death\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 168277061784033,
+					"parameters": {
+						"variable": "Lives",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 966161401286020,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "levelStarfruitCollected"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 719979771124112,
+					"parameters": {
+						"variable": "levelStarfruitCollected",
+						"value": "0"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 138743151472624
+				}
+			],
+			"sid": 799780964230338
+		},
+		{
+			"eventType": "comment",
+			"text": "Adds a starfruit to the counter and displays it"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 915397059569630,
+					"parameters": {
+						"name": "\"collectStarfruit\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Portal",
+					"sid": 580198466330503,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Portal",
+					"sid": 355492623195524,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Portal",
+					"sid": 247676718840093,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 485610135583741,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 646826819434949,
+					"parameters": {
+						"variable": "levelStarfruitCollected",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 868781330582781,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				}
+			],
+			"sid": 740790765500091
+		},
+		{
+			"eventType": "comment",
+			"text": "Show dialog box and dialog text"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 575279828042893,
+					"parameters": {
+						"name": "\"showDialogBox\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 282128283872391,
+					"parameters": {
+						"variable": "lockControls",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 636224933430679,
+					"parameters": {
+						"variable": "shootingEnabled",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 606086277217568,
+					"parameters": {
+						"variable": "stopTimer",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Jaden",
+					"sid": 556487751165406,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "DialogBackground",
+					"sid": 280407458212427,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "proceedText",
+					"sid": 314156654846644,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "proceedText",
+					"sid": 248336702734211,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.5",
+						"off-time": "0.2",
+						"duration": "2000000"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 415049025947077,
+					"parameters": {
+						"variable": "dOpen",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 770078205294330
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 159493700166794,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 134770344244981,
+					"parameters": {
+						"object": "DialogBackground"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 113135265951786,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 728564114753887,
+					"parameters": {
+						"tag": "\"dialogProceed\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "RightTouchControl",
+					"sid": 905133227898488,
+					"parameters": {
+						"width": "665 ",
+						"height": "251"
+					}
+				}
+			],
+			"sid": 174768158982898,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 283055099660512,
+					"parameters": {
+						"name": "\"closeDialogBox\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "dialog",
+					"sid": 567228851041054,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "DialogBackground",
+					"sid": 270232613559046,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "stop-flashing",
+					"objectClass": "proceedText",
+					"sid": 142190720314834,
+					"behaviorType": "Flash"
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "proceedText",
+					"sid": 484886238781035,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 826934295374656,
+					"parameters": {
+						"variable": "stopTimer",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Jaden",
+					"sid": 374368862915559,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "stop-ignoring"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 455297542754666,
+					"parameters": {
+						"variable": "dOpen",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 539917169214799,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 181087474757742,
+							"parameters": {
+								"variable": "CeleryKilledJaden",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 955892315220125,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 738341755556548
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 271084337343640,
+					"parameters": {
+						"name": "\"SetMobileUI\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "LeftTouchControl",
+					"sid": 478449030563477,
+					"parameters": {
+						"width": "-893",
+						"height": "245"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "LeftTouchControl",
+					"sid": 862787257648620,
+					"parameters": {
+						"x": "-24.5",
+						"y": "400.5"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "RightTouchControl",
+					"sid": 411343666715694,
+					"parameters": {
+						"x": "767.5",
+						"y": "401.5"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "RightTouchControl",
+					"sid": 302917670978285,
+					"parameters": {
+						"width": "665",
+						"height": "251"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "JumpTouchControl",
+					"sid": 299222549027531,
+					"parameters": {
+						"x": "635.5",
+						"y": "117"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "JumpTouchControl",
+					"sid": 385027063858734,
+					"parameters": {
+						"width": "1428",
+						"height": "234"
+					}
+				}
+			],
+			"sid": 232050256728981
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 849252127341788,
+					"parameters": {
+						"name": "\"SetMainUI\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "level",
+					"sid": 628234544033260,
+					"parameters": {
+						"x": "13",
+						"y": "4"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "livesText",
+					"sid": 777841709718310,
+					"parameters": {
+						"x": "13",
+						"y": "36"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "starfruitText",
+					"sid": 784326659367326,
+					"parameters": {
+						"x": "14",
+						"y": "68"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "objective",
+					"sid": 934219457036692,
+					"parameters": {
+						"x": "16",
+						"y": "102"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "timerText",
+					"sid": 964928556056114,
+					"parameters": {
+						"x": "639",
+						"y": "16"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "dialog",
+					"sid": 346192048589081,
+					"parameters": {
+						"x": "478",
+						"y": "400"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "DialogBackground",
+					"sid": 664802417809998,
+					"parameters": {
+						"x": "483",
+						"y": "403"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "proceedText",
+					"sid": 617649754574380,
+					"parameters": {
+						"x": "406",
+						"y": "448"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 106713589540813,
+					"parameters": {
+						"variable": "CrouchLock",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 237947388828610
+		}
+	],
+	"sid": 738202817244928
+}

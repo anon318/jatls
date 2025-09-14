@@ -1,0 +1,318 @@
+{
+	"name": "MainMenuControllerSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 885645186105636
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 349072256027520,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 637109047579417,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 845343788646774,
+					"parameters": {
+						"layout": "Level1"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 521063580318640,
+					"parameters": {
+						"folder": "music",
+						"audio-file-name": "\"playlist\"",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 367395992245343,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 756345272694778,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button5",
+					"sid": 226591646111732
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 615229194353340,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 532525534013587,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 890930727595388,
+					"parameters": {
+						"layout": "tutMenu"
+					}
+				}
+			],
+			"sid": 588273542731314,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "exitButton",
+					"sid": 770017877750087
+				}
+			],
+			"actions": [],
+			"sid": 943983673203027
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Button",
+					"sid": 851356779188908
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 151783201478321,
+					"parameters": {
+						"variable": "hours",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 311981338027658,
+					"parameters": {
+						"variable": "minutes",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 202595417107643,
+					"parameters": {
+						"variable": "seconds",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 361192304073642,
+					"parameters": {
+						"variable": "currentLevel",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 894657481568523,
+					"parameters": {
+						"variable": "levelStarfruitCollected",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 479459845852105,
+					"parameters": {
+						"variable": "starfruitOnLevel",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 321654894704720,
+					"parameters": {
+						"variable": "starfruit",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 982032006046505,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 961115989549826
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "leaderboards",
+					"sid": 662746078857832
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 386091358532576,
+					"parameters": {
+						"layout": "leaderboards"
+					}
+				}
+			],
+			"sid": 820409498949065
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "cheatCodeMenu",
+					"sid": 774321711325352
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 403149989091232,
+					"parameters": {
+						"layout": "cheatCodeMenu"
+					}
+				}
+			],
+			"sid": 268231720005680
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-xbox-live-available",
+					"objectClass": "XboxLive",
+					"sid": 587806878367439
+				}
+			],
+			"actions": [
+				{
+					"id": "request-profile-info",
+					"objectClass": "XboxLive",
+					"sid": 516668225838022
+				},
+				{
+					"id": "set-presence",
+					"objectClass": "XboxLive",
+					"sid": 597896144439378,
+					"parameters": {
+						"presence": "in-title"
+					}
+				}
+			],
+			"sid": 892656279010685
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-profile-success",
+					"objectClass": "XboxLive",
+					"sid": 812996207439162
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "userText",
+					"sid": 316977662257433,
+					"parameters": {
+						"text": "\"Hello, \" & XboxLive.GamerTag"
+					}
+				}
+			],
+			"sid": 394614653767775
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-profile-error",
+					"objectClass": "XboxLive",
+					"sid": 422946701711954
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "userText",
+					"sid": 399556227952407,
+					"parameters": {
+						"text": "\"Hello, guest\""
+					}
+				}
+			],
+			"sid": 855786409114645
+		}
+	],
+	"sid": 411618716871971
+}

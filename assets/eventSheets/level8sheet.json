@@ -1,0 +1,600 @@
+{
+	"name": "Level8Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "DoorOpen5",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Is the door open or not?",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 187127598442202
+		},
+		{
+			"eventType": "variable",
+			"name": "TreatDialogPlayed5",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 834219240416644
+		},
+		{
+			"eventType": "variable",
+			"name": "IsAttacking",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 665215996698074
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "PhysicsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ControlSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "CollisionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UISheet"
+		},
+		{
+			"eventType": "comment",
+			"text": "If the player loses all of his lives, send him to the dead menu screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 131660410729914,
+					"parameters": {
+						"variable": "Lives",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 173413453823149,
+					"parameters": {
+						"layout": "deadMenu"
+					}
+				}
+			],
+			"sid": 185083791384282
+		},
+		{
+			"eventType": "comment",
+			"text": "Starts when the layout starts, sets all the labels and variables, also contains all the dialog for level 1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "SunnySkyBackgroud",
+					"sid": 413839674189431
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "livesText",
+					"sid": 814552246699309,
+					"parameters": {
+						"text": "\"Lives: \" & Lives"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitText",
+					"sid": 883512607560977,
+					"parameters": {
+						"text": "\"Starfruit: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "starfruitLevelCount",
+					"sid": 719399849128209,
+					"parameters": {
+						"text": "\"Starfruit on level: \" & Starfruit.Count"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "level",
+					"sid": 472732117239030,
+					"parameters": {
+						"text": "\"Level: 8\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Jaden",
+					"sid": 132178481373427,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "playerSpeed"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "objective",
+					"sid": 436880422224304,
+					"parameters": {
+						"x": "301",
+						"y": "248"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "objective",
+					"sid": 120111008679768,
+					"parameters": {
+						"text": "\"Kill your ex.\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 894929997272842,
+					"parameters": {
+						"variable": "DoorOpen",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 617633652566116,
+					"parameters": {
+						"variable": "shootingEnabled",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821010331134282,
+					"parameters": {
+						"variable": "IsAttacking",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 931277376949789,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 160175445246395,
+							"parameters": {
+								"variable": "doubleJump",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "Jaden",
+							"sid": 225484367994292,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 172348977832113
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 342159313662939,
+					"parameters": {
+						"first-value": "Jaden.X - Lucy.X",
+						"comparison": 3,
+						"second-value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 775162919136060,
+					"parameters": {
+						"variable": "IsAttacking",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Lucy",
+					"sid": 631111771105150,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Lucy",
+					"sid": 493893919009650,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 464059334134625
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 745435805656612
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 600285537648307,
+					"parameters": {
+						"variable": "IsAttacking",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Lucy",
+					"sid": 564303155538238,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Lucy",
+					"sid": 486079793180161,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 890724216314599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Lucy",
+					"sid": 750571315589431,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Jaden"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 415650351727075,
+					"parameters": {
+						"variable": "IsAttacking",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 866040961419747,
+					"parameters": {
+						"variable": "IsAttacking",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Lucy",
+					"sid": 624616246663963,
+					"parameters": {
+						"animation": "\"Attack\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 329230810618323,
+					"parameters": {
+						"seconds": "0.25"
+					}
+				}
+			],
+			"sid": 897435747891125,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "Lucy",
+							"sid": 667088359108958,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Jaden"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Jaden",
+							"sid": 776862650320726,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "25"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 509438653127630,
+							"parameters": {
+								"variable": "IsAttacking",
+								"value": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 893508198191834,
+							"parameters": {
+								"audio-file": "ouch",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 951947278787880
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 712560074652129
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 128567558189169,
+							"parameters": {
+								"variable": "IsAttacking",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 394434765060286
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Lucy",
+					"sid": 785349892339895,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Lucy",
+					"sid": 123424372804898,
+					"parameters": {
+						"animation": "\"Walk\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 447464394713750
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BulletSprite",
+					"sid": 220248502533657,
+					"parameters": {
+						"object": "Lucy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Lucy",
+					"sid": 689733369729147,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "BulletSprite",
+					"sid": 493388167636791
+				}
+			],
+			"sid": 826762386626670
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Lucy",
+					"sid": 796660703404046,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 231376140905991,
+					"parameters": {
+						"object-to-create": "LucyDead",
+						"layer": "1",
+						"x": "Lucy.X",
+						"y": "Lucy.Y"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Lucy",
+					"sid": 200264957352415
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 912565928915822,
+					"parameters": {
+						"layout": "beatGameMenu"
+					}
+				}
+			],
+			"sid": 589614392492125
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 875099704036155
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 738367161803583,
+					"parameters": {
+						"seconds": "2"
+					}
+				}
+			],
+			"sid": 287091443507075,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 560864546805332,
+							"parameters": {
+								"count": "9999"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 791684414774836,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 736539992229498,
+									"parameters": {
+										"first-value": "round(random(3000))",
+										"comparison": 5,
+										"second-value": "2500"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-speed",
+									"objectClass": "Lucy",
+									"sid": 507866732843374,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "300"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 264309063445829,
+									"parameters": {
+										"seconds": "6"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Lucy",
+									"sid": 642788412295279,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "225"
+									}
+								}
+							],
+							"sid": 956544205841579
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 356570043778392
+}

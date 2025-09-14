@@ -1,0 +1,361 @@
+{
+	"name": "cheatCodeEventSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "GlobalDeclarations"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "cheatSubmit",
+					"sid": 999300543041083
+				}
+			],
+			"actions": [],
+			"sid": 686678067367769,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 910163825247523,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"test_level_6\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 321166409563691,
+							"parameters": {
+								"variable": "maxLevel",
+								"value": "6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 296162279007458,
+							"parameters": {
+								"variable": "currentLevel",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 895103896762354,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 760028100352638,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 480647949412554,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 868531815777123
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 664555442124113,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"shoot_unlocked\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 233966586068131,
+							"parameters": {
+								"variable": "shootingEnabled",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 816999879230535,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 397207202387906,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 801219757381184,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 531380417700715
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 897080256572260,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"sonic_speed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 673254323773781,
+							"parameters": {
+								"variable": "playerSpeed",
+								"value": "550"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 220341420385752,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 962019836830915,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 260312314624462,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 721043877654499
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 327684099101403,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"double_jump\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 681613490073466,
+							"parameters": {
+								"variable": "doubleJump",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 372154251157185,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 724358459016728,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 157008629502519,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 281621956327744
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 702926083606584,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"unlimited_lives\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 238920625176727,
+							"parameters": {
+								"variable": "Lives",
+								"value": "99999"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 830838862675450,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 127679969216566,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 253666737045570,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 633333097639332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 230042992740051,
+							"parameters": {
+								"first-value": "cheatCode.text",
+								"comparison": 0,
+								"second-value": "\"jump_high\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 435017477888249,
+							"parameters": {
+								"variable": "Lives",
+								"value": "99999"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 869096390551949,
+							"parameters": {
+								"text": "\"Cheat code activated.\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 693198899890658,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "cheatCodeSubmitted",
+							"sid": 456598373737637,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 300017747970593,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "mainMenu",
+					"sid": 230475356218911
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 756990634684000,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 978012309533773
+		}
+	],
+	"sid": 135707175841471
+}

@@ -1,0 +1,193 @@
+{
+	"name": "WonMenuSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button3",
+					"sid": 698988583217590
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 896032628296700,
+					"parameters": {
+						"layout": "NextLevel"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 333514078297580,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 128164062889716,
+					"parameters": {
+						"tag": "\"game\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 906787656970887,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "54"
+					}
+				}
+			],
+			"sid": 146730382008758,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 377445582252247,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 220538355673226,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 789963894992265,
+					"parameters": {
+						"layout": "NextLevel"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 379881350216134,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 558502129362371,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "54"
+					}
+				}
+			],
+			"sid": 150616901583575,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 464289790059724,
+					"parameters": {
+						"variable": "starfruitCount",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "lifeText",
+					"sid": 142689365609624,
+					"parameters": {
+						"text": "\"You've gained an extra life!\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 538833387998548,
+					"parameters": {
+						"variable": "Lives",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 972010149228327,
+					"parameters": {
+						"variable": "starfruitCount",
+						"value": "54"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lifeText",
+					"sid": 838896956193759,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 779695424189677,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Button3",
+					"sid": 250466964824337
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "starfruitCollectedWonMenu",
+					"sid": 945844314218017,
+					"parameters": {
+						"text": "\"Total Starfruit collected: \" & starfruit"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 690131946728830,
+					"parameters": {
+						"variable": "levelStarfruitCollected",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 716396008650632
+		}
+	],
+	"sid": 448112183896379
+}

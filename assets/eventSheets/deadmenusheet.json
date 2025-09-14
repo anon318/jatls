@@ -1,0 +1,97 @@
+{
+	"name": "deadMenuSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button6",
+					"sid": 449627306998868
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 851543431083844,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 830702323406094,
+					"parameters": {
+						"variable": "Lives",
+						"value": "4"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 288367484357646,
+					"parameters": {
+						"tag": "\"game\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 733012785031584,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 791751554454407,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 269296705365916,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "timeTaken",
+					"sid": 772450306057935
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "timeTaken",
+					"sid": 767954834007156,
+					"parameters": {
+						"text": "\"It took you: \" & hours & \" Minute(s), \" & minutes & \" Second(s) to lose\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 168954318218842,
+					"parameters": {
+						"audio-file": "failed game",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"game\""
+					}
+				}
+			],
+			"sid": 263106626636603
+		}
+	],
+	"sid": 632630232773368
+}

@@ -1,0 +1,549 @@
+{
+	"name": "UISheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "hours",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 475235478393475
+		},
+		{
+			"eventType": "variable",
+			"name": "minutes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 675154091689737
+		},
+		{
+			"eventType": "variable",
+			"name": "stopTimer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 918396762189951
+		},
+		{
+			"eventType": "variable",
+			"name": "seconds",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 336410350425251
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 820742750804692
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 382482466156770,
+					"parameters": {
+						"name": "\"SetMainUI\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 521826399767252,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 938108210425452,
+							"parameters": {
+								"variable": "stopTimer",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 298437773765286,
+							"parameters": {
+								"variable": "seconds",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "timerText",
+							"sid": 267017652529266,
+							"disabled": true,
+							"parameters": {
+								"text": "\"Time Elapsed: \" & hours & \" Minute(s), \" & minutes & \" Second(s)\""
+							}
+						}
+					],
+					"sid": 567418615508428
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 500127185378758,
+							"parameters": {
+								"variable": "seconds",
+								"comparison": 5,
+								"value": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 309674863996564,
+							"parameters": {
+								"variable": "seconds",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 499192601527933,
+							"parameters": {
+								"variable": "minutes",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 720440601458394,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 942871760957485,
+							"parameters": {
+								"variable": "minutes",
+								"comparison": 5,
+								"value": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 184568574930792,
+							"parameters": {
+								"variable": "minutes",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 950056654493617,
+							"parameters": {
+								"variable": "hours",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 857465764194900
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-mobile-device",
+					"objectClass": "System",
+					"sid": 183133661950793
+				}
+			],
+			"actions": [
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 360654993788485,
+					"parameters": {
+						"name": "\"SetUI\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 459856378791450,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "mainMenu",
+					"sid": 575290351466572
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 650897341722274,
+					"parameters": {
+						"time-scale": "1.0"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "paused",
+					"sid": 714365727234795,
+					"parameters": {
+						"x": "2000",
+						"y": "2000"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "mainMenu",
+					"sid": 981652562748586,
+					"parameters": {
+						"x": "2000",
+						"y": "2100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paused",
+					"sid": 387498183219464,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 820954722564432,
+					"parameters": {
+						"variable": "paused",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 943024717717193,
+					"parameters": {
+						"variable": "stopTimer",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 979840062970149,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 376185821662800
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 838553177252859,
+					"parameters": {
+						"object": "pauseMenuMain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Sprite6",
+					"sid": 892868160419963,
+					"parameters": {
+						"x": "99999",
+						"y": "99999"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "pauseMenuMain",
+					"sid": 743020811835913,
+					"parameters": {
+						"x": "9999",
+						"y": "99999"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "pauseMenuSaveGame",
+					"sid": 190677049723322,
+					"parameters": {
+						"x": "99999",
+						"y": "99999"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 279029857006397,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 481497560988685,
+					"parameters": {
+						"variable": "p",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 620400622042532,
+					"parameters": {
+						"variable": "shootingEnabled",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 758407922314783,
+					"parameters": {
+						"variable": "stopTimer",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 307428868725529,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 240165254307977
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 312566590420833,
+					"parameters": {
+						"object": "pauseMenuSaveGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 653225837171751,
+					"parameters": {
+						"slot": "\"SavedGame\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SavedGameMessage",
+					"sid": 458109486950752,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 910057372446504
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 591359219393368,
+					"parameters": {
+						"object": "pauseMenuMain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuMain",
+					"sid": 399549271229617,
+					"parameters": {
+						"text": "\"*Main Menu*\""
+					}
+				}
+			],
+			"sid": 295517991266982
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 403915454567405
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuMain",
+					"sid": 576716544890049,
+					"parameters": {
+						"text": "\"Main Menu\""
+					}
+				}
+			],
+			"sid": 521952531028467
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 163645538613977,
+					"parameters": {
+						"object": "pauseMenuSaveGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuSaveGame",
+					"sid": 266360664393531,
+					"parameters": {
+						"text": "\"*Save Game*\""
+					}
+				}
+			],
+			"sid": 184508602760374
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 128893531780626
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuSaveGame",
+					"sid": 916613966700987,
+					"parameters": {
+						"text": "\"Save Game\""
+					}
+				}
+			],
+			"sid": 739797263492550
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 931030895490937,
+					"parameters": {
+						"object": "pauseMenuQuitGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 383148309898077
+				}
+			],
+			"sid": 985965839883885
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 692526050388173,
+					"parameters": {
+						"object": "pauseMenuQuitGame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuQuitGame",
+					"sid": 820174037418145,
+					"parameters": {
+						"text": "\"*Quit Game*\""
+					}
+				}
+			],
+			"sid": 923421263868985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 297655146023865
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "pauseMenuQuitGame",
+					"sid": 559542949548396,
+					"parameters": {
+						"text": "\"Quit Game\""
+					}
+				}
+			],
+			"sid": 263164826992325
+		}
+	],
+	"sid": 731589853364259
+}

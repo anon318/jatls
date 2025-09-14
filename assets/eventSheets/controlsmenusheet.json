@@ -1,0 +1,86 @@
+{
+	"name": "ControlsMenuSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 268040607474611,
+					"parameters": {
+						"object": "SpriteFont5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont5",
+					"sid": 493143716509226,
+					"parameters": {
+						"text": "\"*Main Menu*\""
+					}
+				}
+			],
+			"sid": 803370861368801
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 605278834003506
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont5",
+					"sid": 431777388496826,
+					"parameters": {
+						"text": "\"Main Menu\""
+					}
+				}
+			],
+			"sid": 488947563672434
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 771909521470765,
+					"parameters": {
+						"object": "SpriteFont5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 223294640751937,
+					"parameters": {
+						"audio-file": "menu_click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 739195096718457,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 259695519455252
+		}
+	],
+	"sid": 684840434925580
+}
