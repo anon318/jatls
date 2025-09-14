@@ -1,0 +1,54 @@
+{
+	"name": "Sprite",
+	"plugin-id": "Sprite",
+	"sid": 687463995864456,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 962109436584290
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1200,
+						"height": 300,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Desktop\\Untitled-1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 249,
+						"collisionPoly": {
+							"points": [
+								0.110833,
+								0.443333,
+								0.891667,
+								0.433333,
+								0.860833,
+								0.443333,
+								0.125,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 644214653598397,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "Dirt",
+	"plugin-id": "TiledBg",
+	"sid": 821214648934388,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 416109350772260
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 746019965953899
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\Dirt1.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 228
+	}
+}

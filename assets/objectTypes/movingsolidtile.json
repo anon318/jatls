@@ -1,0 +1,30 @@
+{
+	"name": "MovingSolidTile",
+	"plugin-id": "TiledBg",
+	"sid": 611817306712529,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 689347078397781
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 486324963333698
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 19,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\dallasroberts\\Downloads\\FloatingPlatform.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 226
+	}
+}

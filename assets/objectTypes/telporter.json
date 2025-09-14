@@ -1,0 +1,58 @@
+{
+	"name": "Telporter",
+	"plugin-id": "Sprite",
+	"sid": 252796050703310,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 969155875091185
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\LevelComplete.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 233,
+						"collisionPoly": {
+							"points": [
+								0.496094,
+								0.621094,
+								0.933594,
+								0.617188,
+								0.910156,
+								0.703125,
+								0.507813,
+								0.707031,
+								0.128906,
+								0.699219,
+								0.09375,
+								0.617188
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 529980435046542,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

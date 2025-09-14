@@ -1,0 +1,15 @@
+{
+	"name": "proceedText",
+	"plugin-id": "Text",
+	"sid": 884356070626652,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 182748028174027
+		}
+	],
+	"effectTypes": []
+}

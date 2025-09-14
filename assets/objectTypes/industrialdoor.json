@@ -1,0 +1,67 @@
+{
+	"name": "IndustrialDoor",
+	"plugin-id": "Sprite",
+	"sid": 747094796631392,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 671564784911195
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 222533307276197
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 247,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.1875,
+								0.5,
+								0,
+								0.59375,
+								0.1875,
+								0.59375,
+								0.5,
+								0.59375,
+								0.796875,
+								0.5,
+								0.984375,
+								0.375,
+								0.796875,
+								0.375,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 685013929939816,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "XboxLive",
+	"plugin-id": "XboxLive",
+	"sid": 167021661552498,
+	"singleglobal-inst": {
+		"type": "XboxLive",
+		"properties": {
+			"title-id": 1831235335,
+			"scid": "00000000-0000-0000-0000-00006d266f07",
+			"xbox-live-creators-title": true
+		},
+		"uid": 260
+	}
+}

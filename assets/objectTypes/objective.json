@@ -1,0 +1,15 @@
+{
+	"name": "objective",
+	"plugin-id": "Text",
+	"sid": 282766291118454,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "custom",
+			"name": "Custom",
+			"sid": 146465948677573
+		}
+	],
+	"effectTypes": []
+}

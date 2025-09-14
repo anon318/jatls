@@ -1,0 +1,250 @@
+{
+	"name": "UIJaden",
+	"plugin-id": "Sprite",
+	"sid": 305883255559333,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 857818828953100
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jadenFrame1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 217,
+						"collisionPoly": {
+							"points": [
+								0.359375,
+								0.359375,
+								0.378906,
+								0.117188,
+								0.533203,
+								0.121094,
+								0.574219,
+								0.179688,
+								0.570313,
+								0.367188,
+								0.578125,
+								0.578125,
+								0.585937,
+								0.921875,
+								0.386719,
+								0.90625,
+								0.359375,
+								0.640625
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jadenFrame2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 218,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.117188,
+								0.566406,
+								0.140625,
+								0.640625,
+								0.695313,
+								0.673828,
+								0.798828,
+								0.742188,
+								0.824219,
+								0.65625,
+								0.90625,
+								0.466797,
+								0.751953,
+								0.308594,
+								0.925781,
+								0.25,
+								0.875,
+								0.339844,
+								0.6875
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jadenFrame1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 219,
+						"collisionPoly": {
+							"points": [
+								0.378906,
+								0.125,
+								0.570313,
+								0.140625,
+								0.578125,
+								0.5,
+								0.570313,
+								0.910156,
+								0.449219,
+								0.917969,
+								0.359375,
+								0.640625
+							]
+						},
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jadenFrame4.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 220,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.117188,
+								0.566406,
+								0.140625,
+								0.640625,
+								0.695313,
+								0.673828,
+								0.798828,
+								0.742188,
+								0.824219,
+								0.65625,
+								0.90625,
+								0.474609,
+								0.771484,
+								0.316406,
+								0.9375,
+								0.25,
+								0.875,
+								0.3125,
+								0.683594
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 467435161215266,
+				"name": "walk",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jaden(2).png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 221,
+						"collisionPoly": {
+							"points": [
+								0.328125,
+								0.132813,
+								0.64502,
+								0.131348,
+								0.65625,
+								0.929688,
+								0.320313,
+								0.917969
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 437825595693517,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\jadenJump(1).png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 222,
+						"collisionPoly": {
+							"points": [
+								0.359375,
+								0.359375,
+								0.378906,
+								0.136719,
+								0.553467,
+								0.129517,
+								0.583496,
+								0.177002,
+								0.588867,
+								0.354004,
+								0.646484,
+								0.395508,
+								0.570313,
+								0.490234,
+								0.574219,
+								0.695313,
+								0.6875,
+								0.769531,
+								0.734375,
+								0.820313,
+								0.648438,
+								0.898438,
+								0.171875,
+								0.726563,
+								0.265625,
+								0.636719,
+								0.359375,
+								0.695313
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 655082435082799,
+				"name": "jump",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

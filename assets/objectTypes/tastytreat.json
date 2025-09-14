@@ -1,0 +1,52 @@
+{
+	"name": "tastyTreat",
+	"plugin-id": "Sprite",
+	"sid": 358687541857589,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\Tasty Treat.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 223,
+						"collisionPoly": {
+							"points": [
+								0.128906,
+								0.3125,
+								0.234375,
+								0.28125,
+								0.789063,
+								0.277344,
+								0.869141,
+								0.347656,
+								0.867188,
+								0.625,
+								0.0859375,
+								0.625
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 155690298147192,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

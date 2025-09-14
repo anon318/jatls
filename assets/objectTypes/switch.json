@@ -1,0 +1,104 @@
+{
+	"name": "Switch",
+	"plugin-id": "Sprite",
+	"sid": 554667040080059,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 734048918713749
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 244,
+						"collisionPoly": {
+							"points": [
+								0.34375,
+								0.34375,
+								0.5,
+								0.4375,
+								0.5,
+								0.46875,
+								0.5625,
+								0.5,
+								0.78125,
+								0.78125,
+								0.5,
+								0.59375,
+								0.34375,
+								0.625,
+								0.34375,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 169565275640599,
+				"name": "Off",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 245,
+						"collisionPoly": {
+							"points": [
+								0.34375,
+								0.34375,
+								0.5,
+								0.4375,
+								0.71875,
+								0.25,
+								0.59375,
+								0.5,
+								0.53125,
+								0.53125,
+								0.5,
+								0.59375,
+								0.34375,
+								0.625,
+								0.34375,
+								0.5
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 452271859847905,
+				"name": "On",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

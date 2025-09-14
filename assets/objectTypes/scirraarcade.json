@@ -1,0 +1,10 @@
+{
+	"name": "ScirraArcade",
+	"plugin-id": "ScirraArcadeV4",
+	"sid": 183813977507216,
+	"singleglobal-inst": {
+		"type": "ScirraArcade",
+		"properties": {},
+		"uid": 261
+	}
+}

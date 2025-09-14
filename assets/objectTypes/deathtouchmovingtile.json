@@ -1,0 +1,42 @@
+{
+	"name": "deathTouchMovingTile",
+	"plugin-id": "TiledBg",
+	"sid": 118138464550877,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 996581396665765
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 891770918116697
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 100,
+		"height": 19,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\dallasroberts\\Downloads\\FloatingPlatform.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3,
+		"collisionPoly": {
+			"points": [
+				0,
+				1,
+				0,
+				0,
+				1,
+				0,
+				1,
+				1
+			]
+		}
+	}
+}

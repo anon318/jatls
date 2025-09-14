@@ -1,0 +1,71 @@
+{
+	"name": "DeadJaden",
+	"plugin-id": "Sprite",
+	"sid": 722003207582519,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 519662476257163
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 438301903833437
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 698918341942423
+		},
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 813922241725337
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8,
+						"collisionPoly": {
+							"points": [
+								0.0859375,
+								0.671875,
+								0.92578125,
+								0.6640625,
+								0.9279513888888888,
+								0.9179687499999997,
+								0.07942708333333331,
+								0.9157986111111109
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 879921924610653,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

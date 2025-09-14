@@ -1,0 +1,90 @@
+{
+	"name": "Eric",
+	"plugin-id": "Sprite",
+	"sid": 588825448906781,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "dialogPlayed",
+			"type": "number",
+			"desc": "",
+			"sid": 765674686700046
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 470541443949569
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 178785795252379
+		},
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 873303231462310
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 147028193617611
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 516057605689817
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\arthurhoefer\\Downloads\\Cool Eric.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 194,
+						"collisionPoly": {
+							"points": [
+								0.328125,
+								0.109375,
+								0.5,
+								0.0625,
+								0.675781,
+								0.105469,
+								0.695313,
+								0.488281,
+								0.722656,
+								0.890625,
+								0.292969,
+								0.902344,
+								0.332031,
+								0.65625,
+								0.34375,
+								0.488281
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 114236127614049,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

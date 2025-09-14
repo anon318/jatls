@@ -1,0 +1,30 @@
+{
+	"name": "movingUntilBlocked",
+	"plugin-id": "TiledBg",
+	"sid": 790599609137460,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 766179580795459
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 238094651096662
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 100,
+		"height": 19,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\dallasroberts\\Downloads\\BalloonPlatform.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 227
+	}
+}
